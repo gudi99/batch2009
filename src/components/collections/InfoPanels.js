@@ -6,7 +6,7 @@ import AfterNavodayaPanel from "./AfterNavodayaPanel";
 import SocialAccountsPanel from "./SocialAccountsPanel";
 import FavouritesPanel from "./FavouritesPanel";
 import FirstThingsPanel from "./FirstThingsPanel";
-import PostsPanel from "./PostsPanel";
+import ArticlesPanel from "./ArticlesPanel";
 import GalleryPanel from "./GalleryPanel";
 
 class InfoPanels extends Component {
@@ -54,10 +54,10 @@ class InfoPanels extends Component {
 						<FirstThingsPanel />
 					</div>
 				];
-			case "Posts":
+			case "Articles":
 				return [
 					<div key={this.state.activeItem}>
-						<PostsPanel />
+						<ArticlesPanel />
 					</div>
 				];
 			case "Gallery":
@@ -115,10 +115,10 @@ class InfoPanels extends Component {
 				value: "FirstThings"
 			},
 			{
-				key: "Posts",
+				key: "Articles",
 				icon: "list",
-				text: "Posts",
-				value: "Posts"
+				text: "Articles",
+				value: "Articles"
 			},
 			{
 				key: "Gallery",
@@ -129,8 +129,8 @@ class InfoPanels extends Component {
 		];
 
 		return (
-			<div style={{ marginLeft: "-15px" }}>
-				<Responsive minWidth={Responsive.onlyTablet.minWidth} as="menu">
+			<div>
+				<Responsive minWidth={Responsive.onlyTablet.minWidth}>
 					<Segment color="teal">
 						<Menu attached="top" tabular stackable color="teal">
 							<Menu.Item
@@ -174,8 +174,8 @@ class InfoPanels extends Component {
 							<Menu.Menu position="right">
 								<Menu.Item
 									icon="list"
-									name="Posts"
-									active={activeItem === "Posts"}
+									name="Articles"
+									active={activeItem === "Articles"}
 									onClick={this.handleItemClick}
 								/>
 								<Menu.Item
@@ -193,9 +193,9 @@ class InfoPanels extends Component {
 					</Segment>
 				</Responsive>
 
-				<Responsive {...Responsive.onlyMobile} as="Menu">
-					<div style={{ marginLeft: "-25px" }}>
-						<Button.Group color="teal">
+				<Responsive {...Responsive.onlyMobile}>
+					<div>
+						<Button.Group color="teal" attached="top">
 							<Button>Tabs</Button>
 							<Dropdown
 								button

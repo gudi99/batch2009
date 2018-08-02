@@ -11,8 +11,7 @@ class SchoolInfoPanel extends React.Component {
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="calendar times outline" />Studied
-								from
+								<Icon name="calendar" />Studied from
 							</Table.Cell>
 							<Table.Cell>2009</Table.Cell>
 							<Table.Cell>to</Table.Cell>

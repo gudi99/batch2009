@@ -8,49 +8,44 @@ class MyDashboardPage extends React.Component {
 
 	render() {
 		return (
-			<Segment style={{ marginTop: "10px" }}>
-				<Grid centered textAlign="center" stackable>
-					<Grid.Row centered>
-						<Header as="h1" content="My Dashboard" color="teal" />
-					</Grid.Row>
-					<Grid.Row centered columns={5}>
-						<Grid.Column>
-							<Segment textAlign="center" stacked raised>
-								<Image
-									src={profileDummyPic}
-									size="medium"
-									centered
-								/>
+			<Grid centered textAlign="center" stackable>
+				<Grid.Row centered>
+					<Header as="h1" content="My Dashboard" color="teal" />
+				</Grid.Row>
+				<Grid.Row centered columns={5}>
+					<Grid.Column>
+						<Segment textAlign="center" stacked raised>
+							<Image
+								src={profileDummyPic}
+								size="medium"
+								centered
+							/>
+						</Segment>
+					</Grid.Column>
+				</Grid.Row>
+				<Grid.Row centered columns={2}>
+					<Grid.Column>
+						<Segment.Group>
+							<Segment color="teal" textAlign="center">
+								<Header as="h3" content="Saka Sai Trinath" />
 							</Segment>
-						</Grid.Column>
-					</Grid.Row>
-					<Grid.Row centered columns={2}>
-						<Grid.Column>
-							<Segment.Group>
-								<Segment color="teal" textAlign="center">
-									<Header
-										as="h3"
-										content="Saka Sai Trinath"
-									/>
+							<Segment.Group horizontal>
+								<Segment as="h5">Current Status</Segment>
+								<Segment>
+									Studying B.Tech CSE at Lovely Professional
+									University
 								</Segment>
-								<Segment.Group horizontal>
-									<Segment as="h5">Current Status</Segment>
-									<Segment>
-										Studying B.Tech CSE at Lovely
-										Professional University
-									</Segment>
-								</Segment.Group>
 							</Segment.Group>
-						</Grid.Column>
-					</Grid.Row>
+						</Segment.Group>
+					</Grid.Column>
+				</Grid.Row>
 
-					<Grid.Row>
-						<Grid.Column>
-							<InfoPanels />
-						</Grid.Column>
-					</Grid.Row>
-				</Grid>
-			</Segment>
+				<Grid.Row>
+					<Grid.Column>
+						<InfoPanels />
+					</Grid.Column>
+				</Grid.Row>
+			</Grid>
 		);
 	}
 }

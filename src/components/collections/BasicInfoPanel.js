@@ -47,12 +47,6 @@ class BasicInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="whatsapp" />WhatsApp me at
-							</Table.Cell>
-							<Table.Cell>9866153176</Table.Cell>
-						</Table.Row>
-						<Table.Row>
-							<Table.Cell>
 								<Icon name="home" />Reside at
 							</Table.Cell>
 							<Table.Cell>

@@ -177,12 +177,11 @@ class DashboardPage extends React.Component {
 								{activeItem === "Announcements" ||
 								activeItem === "Status" ||
 								activeItem === "Feed" ? (
-									<Button.Group floated="right">
+									<Button.Group floated="right" size="tiny">
 										<Button
 											icon
 											labelPosition="right"
 											color="blue"
-											size="tiny"
 											onClick={this.toDashboard}
 										>
 											Dashboard
@@ -192,7 +191,6 @@ class DashboardPage extends React.Component {
 											icon
 											labelPosition="right"
 											color="grey"
-											size="tiny"
 										>
 											Settings
 											<Icon name="setting" />
@@ -201,19 +199,17 @@ class DashboardPage extends React.Component {
 											icon
 											labelPosition="right"
 											color="red"
-											size="tiny"
 										>
 											logout
 											<Icon name="sign out alternate" />
 										</Button>
 									</Button.Group>
 								) : (
-									<Button.Group floated="right">
+									<Button.Group floated="right" size="tiny">
 										<Button
 											icon
 											labelPosition="right"
 											color="grey"
-											size="tiny"
 										>
 											Settings
 											<Icon name="setting" />
@@ -222,13 +218,19 @@ class DashboardPage extends React.Component {
 											icon
 											labelPosition="right"
 											color="red"
-											size="tiny"
 										>
 											logout
 											<Icon name="sign out alternate" />
 										</Button>
 									</Button.Group>
 								)}
+
+								{/* Page Content */}
+								<div>
+									<Segment style={{ marginTop: "10px" }}>
+										{this.returnSwitch(activeItem)}
+									</Segment>
+								</div>
 							</Responsive>
 
 							<Responsive {...Responsive.onlyMobile}>
@@ -275,10 +277,19 @@ class DashboardPage extends React.Component {
 										/>
 									</Button.Group>
 								)}
-							</Responsive>
 
-							{/* Page Content */}
-							<div>{this.returnSwitch(activeItem)}</div>
+								{/* Page Content */}
+								<Segment
+									style={{
+										marginTop: "10px",
+										marginLeft: "-10px",
+										marginRight: "-10px",
+										marginBottom: "-10px"
+									}}
+								>
+									{this.returnSwitch(activeItem)}
+								</Segment>
+							</Responsive>
 						</Segment>
 					</Sidebar.Pusher>
 				</Sidebar.Pushable>
