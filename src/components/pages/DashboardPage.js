@@ -16,7 +16,7 @@ import FeedPage from "./FeedPage";
 import MyDashboardPage from "./MyDashboardPage";
 
 class DashboardPage extends React.Component {
-	state = { activeItem: "", visible: false };
+	state = { activeItem: "Dashboard", visible: false };
 
 	handleItemClick = (e, { name }) =>
 		this.setState({
