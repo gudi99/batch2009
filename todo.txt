@@ -1,6 +1,20 @@
+Need to add:
+	feedback button in sidebar,
+	dashboard in sidebar
+
+	In settings:
+		change password,
+		security settings (still need to think),
+		edit pages for all.
+
+	Introductory pages which asks the user data. (these are only visible when user's first time visit).
+
 More Tabs to do:
 
-1) Status After School
-2) My Posts
-	2.1) Create Posts
-3) MyGallery
+added 1) Status After School
+added 2) My Posts
+	 need to add 2.1) Create Posts
+added 3) MyGallery
+
+
+

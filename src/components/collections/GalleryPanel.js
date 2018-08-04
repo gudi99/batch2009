@@ -1,5 +1,6 @@
 import React from "react";
-import { Header } from "semantic-ui-react";
+import { Card, Responsive } from "semantic-ui-react";
+import gImg from "../images/my pic.jpg";
 
 class GalleryPanel extends React.Component {
 	state = {};
@@ -7,7 +8,38 @@ class GalleryPanel extends React.Component {
 	render() {
 		return (
 			<div>
-				<Header as="h4">GalleryPanel</Header>
+				<Responsive minWidth={Responsive.onlyTablet.minWidth}>
+					<Card.Group itemsPerRow={4}>
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+					</Card.Group>
+				</Responsive>
+				<Responsive {...Responsive.onlyMobile}>
+					<Card.Group itemsPerRow={1}>
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+						<Card color='teal' image={gImg} />
+					</Card.Group>
+				</Responsive>
 			</div>
 		);
 	}
