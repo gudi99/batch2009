@@ -227,7 +227,7 @@ class DashboardPage extends React.Component {
 
 								{/* Page Content */}
 								<div>
-									<Segment style={{ marginTop: "10px" }}>
+									<Segment style={{ marginTop: "10px", minHeight: window.innerHeight }}>
 										{this.returnSwitch(activeItem)}
 									</Segment>
 								</div>
