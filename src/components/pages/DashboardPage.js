@@ -7,13 +7,16 @@ import {
 	Header,
 	Button,
 	Icon,
-	Responsive
+	Responsive,
+	Label
 } from "semantic-ui-react";
 import logoImage from "../images/icon.png";
 import AnnouncementsPage from "./AnnouncementsPage";
 import StatusPage from "./StatusPage";
 import FeedPage from "./FeedPage";
 import MyDashboardPage from "./MyDashboardPage";
+import SiteGalleryPage from "./SiteGalleryPage";
+import FeedbackPage from "./FeedbackPage";
 
 class DashboardPage extends React.Component {
 	state = { activeItem: "Dashboard", visible: false };
@@ -68,6 +71,18 @@ class DashboardPage extends React.Component {
 						<MyDashboardPage />
 					</div>
 				];
+			case "SiteGallery":
+				return [
+					<div key={this.state.activeItem}>
+						<SiteGalleryPage />
+					</div>
+				];
+			case "Feedback":
+				return [
+					<div key={this.state.activeItem}>
+						<FeedbackPage />
+					</div>
+				];
 			default:
 				return [
 					<div key={this.state.activeItem}>
@@ -90,9 +105,9 @@ class DashboardPage extends React.Component {
 						vertical
 						width="wide"
 						animation="overlay"
-						icon="labeled"
 						onHide={this.handleSideBarHide}
 						mobile="true"
+						size="huge"
 					>
 						{/* Brand position */}
 						<Menu.Item>
@@ -114,45 +129,60 @@ class DashboardPage extends React.Component {
 							</Segment>
 						</Menu.Item>
 						<Menu.Item />
-						<Menu.Item>
-							<Segment raised>
-								<Menu.Item
-									name="Announcements"
-									active={activeItem === "Announcements"}
-									onClick={this.handleItemClick}
-								>
-									<Icon name="bullhorn" />
-									<Header as="h4">Announcements</Header>
-									<p>
-										Check out all new announcements from the
-										Developer
-									</p>
-								</Menu.Item>
 
-								<Menu.Item
-									name="Status"
-									active={activeItem === "Status"}
-									onClick={this.handleItemClick}
-								>
-									<Icon name="address card" />
-									<Header as="h4">Status</Header>
-									<p>
-										{
-											"Check out all our friends' current Status"
-										}
-									</p>
-								</Menu.Item>
+						<Segment raised size="big">
+							<Menu.Item
+								name="Announcements"
+								active={activeItem === "Announcements"}
+								onClick={this.handleItemClick}
+							>
+								<Label color="teal" corner size="small">
+									2
+								</Label>
+								<Icon name="bullhorn" />Announcements
+							</Menu.Item>
 
-								<Menu.Item
-									name="Feed"
-									active={activeItem === "Feed"}
-									onClick={this.handleItemClick}
-								>
-									<Icon name="feed" />
-									<Header as="h4">Feed</Header>
-									<p>Get the feed from our friends</p>
-								</Menu.Item>
-							</Segment>
+							<Menu.Item
+								name="Status"
+								active={activeItem === "Status"}
+								onClick={this.handleItemClick}
+							>
+								<Icon name="address card" />Status
+							</Menu.Item>
+
+							<Menu.Item
+								name="Feed"
+								active={activeItem === "Feed"}
+								onClick={this.handleItemClick}
+							>
+								<Label color="teal" corner size="small">
+									10
+								</Label>
+								<Icon name="feed" />Feed
+							</Menu.Item>
+						</Segment>
+
+						<Menu.Item />
+						<Menu.Item
+							name="Dashboard"
+							active={activeItem === "Dashboard"}
+							onClick={this.handleItemClick}
+						>
+							<Icon name="dashboard" />MyDashboard
+						</Menu.Item>
+						<Menu.Item
+							name="SiteGallery"
+							active={activeItem === "SiteGallery"}
+							onClick={this.handleItemClick}
+						>
+							<Icon name="images" />Site Gallery
+						</Menu.Item>
+						<Menu.Item
+							name="Feedback"
+							active={activeItem === "Feedback"}
+							onClick={this.handleItemClick}
+						>
+							<Icon name="alarm" />Feedback
 						</Menu.Item>
 					</Sidebar>
 
@@ -176,7 +206,9 @@ class DashboardPage extends React.Component {
 
 								{activeItem === "Announcements" ||
 								activeItem === "Status" ||
-								activeItem === "Feed" ? (
+								activeItem === "Feed" ||
+								activeItem === "Feedback" ||
+								activeItem === "SiteGallery" ? (
 									<Button.Group floated="right" size="tiny">
 										<Button
 											icon
@@ -227,7 +259,12 @@ class DashboardPage extends React.Component {
 
 								{/* Page Content */}
 								<div>
-									<Segment style={{ marginTop: "10px", minHeight: window.innerHeight }}>
+									<Segment
+										style={{
+											marginTop: "10px",
+											minHeight: window.innerHeight
+										}}
+									>
 										{this.returnSwitch(activeItem)}
 									</Segment>
 								</div>
@@ -243,7 +280,9 @@ class DashboardPage extends React.Component {
 
 								{activeItem === "Announcements" ||
 								activeItem === "Status" ||
-								activeItem === "Feed" ? (
+								activeItem === "Feed" ||
+								activeItem === "Feedback" ||
+								activeItem === "SiteGallery" ? (
 									<Button.Group floated="right">
 										<Button
 											icon="dashboard"

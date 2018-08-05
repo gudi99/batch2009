@@ -1,6 +1,7 @@
 Need to add:
 	feedback button in sidebar,
-	dashboard in sidebar
+	dashboard in sidebar,
+	Main Gallery
 
 	In settings:
 		change password,
