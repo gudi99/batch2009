@@ -206,9 +206,9 @@ class InfoPanels extends Component {
 								onChange={this.handleChange}
 							/>
 						</Button.Group>
-						<Segment attached="bottom">
+						<div attached="bottom" style={{ marginTop: "5px" }}>
 							{this.returnSwitch(activeItem)}
-						</Segment>
+						</div>
 					</div>
 				</Responsive>
 			</div>

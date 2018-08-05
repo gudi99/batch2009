@@ -136,7 +136,7 @@ class DashboardPage extends React.Component {
 								active={activeItem === "Announcements"}
 								onClick={this.handleItemClick}
 							>
-								<Label color="teal" corner size="small">
+								<Label color="red" horizontal size="small">
 									2
 								</Label>
 								<Icon name="bullhorn" />Announcements
@@ -155,7 +155,7 @@ class DashboardPage extends React.Component {
 								active={activeItem === "Feed"}
 								onClick={this.handleItemClick}
 							>
-								<Label color="teal" corner size="small">
+								<Label color="red" horizontal size="small">
 									10
 								</Label>
 								<Icon name="feed" />Feed
