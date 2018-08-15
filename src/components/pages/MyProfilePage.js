@@ -8,12 +8,12 @@ class MyProfilePage extends React.Component {
 
 	render() {
 		return (
-			<Grid centered textAlign="center" stackable>
+			<Grid centered textAlign="center" stackable verticalAlign="middle">
 				<Grid.Row centered>
 					<Header as="h1" content="My Profile" color="teal" />
 				</Grid.Row>
-				<Grid.Row centered columns={5}>
-					<Grid.Column>
+				<Grid.Row centered>
+					<Grid.Column width={3}>
 						<Segment textAlign="center" stacked raised>
 							<Image
 								src={profileDummyPic}
@@ -30,9 +30,9 @@ class MyProfilePage extends React.Component {
 							}
 						</Segment>
 					</Grid.Column>
-				</Grid.Row>
-				<Grid.Row centered columns={2}>
-					<Grid.Column>
+					{/* </Grid.Row>
+				<Grid.Row centered columns={2}> */}
+					<Grid.Column width={8}>
 						<Segment.Group>
 							<Segment color="teal" textAlign="center">
 								<Header as="h3" content="Saka Sai Trinath" />
@@ -43,6 +43,12 @@ class MyProfilePage extends React.Component {
 									Studying B.Tech CSE at Lovely Professional
 									University
 								</Segment>
+							</Segment.Group>
+							<Segment.Group horizontal>
+								<Segment as="h5">Articles</Segment>
+								<Segment>4</Segment>
+								<Segment as="h5">Gallery</Segment>
+								<Segment>16</Segment>
 							</Segment.Group>
 							{
 								// This should appear if user is viewing his profile in My profile time only.

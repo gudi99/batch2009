@@ -15,6 +15,14 @@ class SocialAccountsPanel extends React.Component {
 		return (
 			<div>
 				<Responsive minWidth={Responsive.onlyTablet.minWidth}>
+					{
+						// This should appear if user is viewing his profile in My profile time only.
+						// If he come to this page from status cards, then this should not display
+						<Label attached="top right" as="a">
+							<Icon name="edit" />
+							Edit
+						</Label>
+					}
 					<Table striped>
 						<Table.Body>
 							<Table.Row>
@@ -130,18 +138,19 @@ class SocialAccountsPanel extends React.Component {
 								</Table.Cell>
 							</Table.Row>
 						</Table.Body>
-						{
-							// This should appear if user is viewing his profile in My profile time only.
-							// If he come to this page from status cards, then this should not display
-							<Label attached="top right" as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
-						}
 					</Table>
 				</Responsive>
 
 				<Responsive {...Responsive.onlyMobile}>
+					{
+						// This should appear if user is viewing his profile in My profile time only.
+						// If he come to this page from status cards, then this should not display
+						<Label as="a">
+							<Icon name="edit" />
+							Edit
+						</Label>
+					}
+					<Divider />
 					<Button circular color="facebook" icon="facebook" />
 					<a
 						href="https://www.facebook.com/saitrinath.saka"
@@ -213,14 +222,6 @@ class SocialAccountsPanel extends React.Component {
 					>
 						SakaSaiTrinath
 					</a>
-					{
-						// This should appear if user is viewing his profile in My profile time only.
-						// If he come to this page from status cards, then this should not display
-						<Label attached="top right" as="a">
-							<Icon name="edit" />
-							Edit
-						</Label>
-					}
 				</Responsive>
 			</div>
 		);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Icon, Label } from "semantic-ui-react";
+import { Table, Icon, Label, Responsive } from "semantic-ui-react";
 
 class SchoolInfoPanel extends React.Component {
 	state = {};
@@ -7,11 +7,30 @@ class SchoolInfoPanel extends React.Component {
 	render() {
 		return (
 			<div>
+				{
+					// This should appear if user is viewing his profile in My profile time only.
+					// If he come to this page from status cards, then this should not display
+					<div>
+						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
+							<Label attached="top right" as="a">
+								<Icon name="edit" />
+								Edit
+							</Label>
+						</Responsive>
+
+						<Responsive {...Responsive.onlyMobile}>
+							<Label as="a">
+								<Icon name="edit" />
+								Edit
+							</Label>
+						</Responsive>
+					</div>
+				}
 				<Table celled striped>
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="calendar" />
+								<Icon name="calendar" color="teal" />
 								Studied from
 							</Table.Cell>
 							<Table.Cell>2009</Table.Cell>
@@ -33,14 +52,14 @@ class SchoolInfoPanel extends React.Component {
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="home" />
+								<Icon name="home" color="teal" />
 								Junior House
 							</Table.Cell>
 							<Table.Cell>Nilagiri</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="home" />
+								<Icon name="home" color="teal" />
 								Senior House
 							</Table.Cell>
 							<Table.Cell>Nilagiri</Table.Cell>
@@ -65,7 +84,7 @@ class SchoolInfoPanel extends React.Component {
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="volleyball ball" />
+								<Icon name="volleyball ball" color="teal" />
 								Volleyball
 							</Table.Cell>
 							<Table.Cell>Clusters</Table.Cell>
@@ -73,7 +92,7 @@ class SchoolInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="kickstarter k" />
+								<Icon name="kickstarter k" color="teal" />
 								Kabaddi
 							</Table.Cell>
 							<Table.Cell>Regionals</Table.Cell>
@@ -81,7 +100,7 @@ class SchoolInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="gg" />
+								<Icon name="gg" color="teal" />
 								Kho Kho
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
@@ -89,7 +108,7 @@ class SchoolInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="strikethrough" />
+								<Icon name="strikethrough" color="teal" />
 								Shuttle
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
@@ -97,7 +116,7 @@ class SchoolInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="chess knight" />
+								<Icon name="chess knight" color="teal" />
 								Chess
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
@@ -105,7 +124,7 @@ class SchoolInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="futbol" />
+								<Icon name="futbol" color="teal" />
 								Football
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
@@ -113,21 +132,13 @@ class SchoolInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="table tennis" />
+								<Icon name="table tennis" color="teal" />
 								Table Tennis
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
 							<Table.Cell>1</Table.Cell>
 						</Table.Row>
 					</Table.Body>
-					{
-						// This should appear if user is viewing his profile in My profile time only.
-						// If he come to this page from status cards, then this should not display
-						<Label attached="top right" as="a">
-							<Icon name="edit" />
-							Edit
-						</Label>
-					}
 				</Table>
 			</div>
 		);

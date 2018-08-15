@@ -194,7 +194,7 @@ class InfoPanels extends Component {
 				</Responsive>
 
 				<Responsive {...Responsive.onlyMobile}>
-					<div>
+					<container>
 						<Button.Group color="teal" attached="top">
 							<Button>Tabs</Button>
 							<Dropdown
@@ -202,6 +202,7 @@ class InfoPanels extends Component {
 								floating
 								openOnFocus
 								className="icon"
+								defaultValue="BasicInfo"
 								options={options}
 								onChange={this.handleChange}
 							/>
@@ -209,7 +210,7 @@ class InfoPanels extends Component {
 						<div attached="bottom" style={{ marginTop: "5px" }}>
 							{this.returnSwitch(activeItem)}
 						</div>
-					</div>
+					</container>
 				</Responsive>
 			</div>
 		);
