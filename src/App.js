@@ -1,12 +1,16 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import WelcomePage from "./components/pages/WelcomePage";
 import DashboardPage from "./components/pages/DashboardPage";
+import Page404 from "./components/pages/Page404";
 
 const App = () => (
 	<div>
-		<Route path="/" exact component={WelcomePage} />
-		<Route path="/dashboard" exact component={DashboardPage} />
+		<Switch>
+			<Route path="/" exact component={WelcomePage} />
+			<Route path="/dashboard" component={DashboardPage} />
+			<Route component={Page404} />
+		</Switch>
 	</div>
 );
 

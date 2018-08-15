@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Icon } from "semantic-ui-react";
+import { Table, Icon, Label } from "semantic-ui-react";
 
 class SchoolInfoPanel extends React.Component {
 	state = {};
@@ -11,7 +11,8 @@ class SchoolInfoPanel extends React.Component {
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="calendar" />Studied from
+								<Icon name="calendar" />
+								Studied from
 							</Table.Cell>
 							<Table.Cell>2009</Table.Cell>
 							<Table.Cell>to</Table.Cell>
@@ -32,13 +33,15 @@ class SchoolInfoPanel extends React.Component {
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="home" />Junior House
+								<Icon name="home" />
+								Junior House
 							</Table.Cell>
 							<Table.Cell>Nilagiri</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="home" />Senior House
+								<Icon name="home" />
+								Senior House
 							</Table.Cell>
 							<Table.Cell>Nilagiri</Table.Cell>
 						</Table.Row>
@@ -62,54 +65,69 @@ class SchoolInfoPanel extends React.Component {
 					<Table.Body>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="volleyball ball" />Volleyball
+								<Icon name="volleyball ball" />
+								Volleyball
 							</Table.Cell>
 							<Table.Cell>Clusters</Table.Cell>
 							<Table.Cell>3</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="kickstarter k" />Kabaddi
+								<Icon name="kickstarter k" />
+								Kabaddi
 							</Table.Cell>
 							<Table.Cell>Regionals</Table.Cell>
 							<Table.Cell>2</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="gg" />Kho Kho
+								<Icon name="gg" />
+								Kho Kho
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
 							<Table.Cell>1</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="strikethrough" />Shuttle
+								<Icon name="strikethrough" />
+								Shuttle
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
 							<Table.Cell>1</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="chess knight" />Chess
+								<Icon name="chess knight" />
+								Chess
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
 							<Table.Cell>1</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="futbol" />Football
+								<Icon name="futbol" />
+								Football
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
 							<Table.Cell>1</Table.Cell>
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
-								<Icon name="table tennis" />Table Tennis
+								<Icon name="table tennis" />
+								Table Tennis
 							</Table.Cell>
 							<Table.Cell>Nationals</Table.Cell>
 							<Table.Cell>1</Table.Cell>
 						</Table.Row>
 					</Table.Body>
+					{
+						// This should appear if user is viewing his profile in My profile time only.
+						// If he come to this page from status cards, then this should not display
+						<Label attached="top right" as="a">
+							<Icon name="edit" />
+							Edit
+						</Label>
+					}
 				</Table>
 			</div>
 		);

@@ -1,5 +1,12 @@
 import React from "react";
-import { Table, Button, Responsive, Divider } from "semantic-ui-react";
+import {
+	Table,
+	Button,
+	Responsive,
+	Divider,
+	Label,
+	Icon
+} from "semantic-ui-react";
 
 class SocialAccountsPanel extends React.Component {
 	state = {};
@@ -123,6 +130,14 @@ class SocialAccountsPanel extends React.Component {
 								</Table.Cell>
 							</Table.Row>
 						</Table.Body>
+						{
+							// This should appear if user is viewing his profile in My profile time only.
+							// If he come to this page from status cards, then this should not display
+							<Label attached="top right" as="a">
+								<Icon name="edit" />
+								Edit
+							</Label>
+						}
 					</Table>
 				</Responsive>
 
@@ -198,6 +213,14 @@ class SocialAccountsPanel extends React.Component {
 					>
 						SakaSaiTrinath
 					</a>
+					{
+						// This should appear if user is viewing his profile in My profile time only.
+						// If he come to this page from status cards, then this should not display
+						<Label attached="top right" as="a">
+							<Icon name="edit" />
+							Edit
+						</Label>
+					}
 				</Responsive>
 			</div>
 		);

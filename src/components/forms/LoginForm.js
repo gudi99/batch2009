@@ -26,7 +26,8 @@ class LoginForm extends React.Component {
 		});
 	};
 
-	onSubmit = () => {
+	onSubmit = e => {
+		e.preventDefault();
 		const errors = this.validate(this.state.data);
 		this.setState({
 			errors
@@ -60,9 +61,6 @@ class LoginForm extends React.Component {
 							error={!!errors}
 						>
 							<Segment stacked>
-								{errors.username && (
-									<InlineError text={errors.username} />
-								)}
 								<Form.Input
 									fluid
 									icon="user"
@@ -74,9 +72,10 @@ class LoginForm extends React.Component {
 									value={data.username}
 									error={!!errors.username}
 								/>
-								{errors.password && (
-									<InlineError text={errors.password} />
+								{errors.username && (
+									<InlineError text={errors.username} />
 								)}
+
 								<Form.Input
 									fluid
 									icon="lock"
@@ -89,6 +88,9 @@ class LoginForm extends React.Component {
 									value={data.password}
 									error={!!errors.password}
 								/>
+								{errors.password && (
+									<InlineError text={errors.password} />
+								)}
 								<Button color="teal" fluid size="large">
 									Login
 								</Button>

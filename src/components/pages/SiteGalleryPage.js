@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Header } from "semantic-ui-react";
 import Gallery from "react-photo-gallery";
 import Lightbox from "react-images";
-/* import gImg from "../images/my pic.jpg"; */
 import _1 from "../images/pics/2.jpg";
 import _2 from "../images/pics/1.jpg";
 import _3 from "../images/pics/3.jpg";
@@ -61,54 +60,6 @@ const photos = [
 	}
 ];
 
-/* const photos = [
-	{
-		src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-		width: 4,
-		height: 3
-	},
-	{
-		src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-		width: 1,
-		height: 1
-	},
-	{
-		src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-		width: 3,
-		height: 4
-	},
-	{
-		src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-		width: 3,
-		height: 4
-	},
-	{
-		src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-		width: 3,
-		height: 4
-	},
-	{
-		src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-		width: 4,
-		height: 3
-	},
-	{
-		src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
-		width: 3,
-		height: 4
-	},
-	{
-		src: "https://source.unsplash.com/PpOHJezOalU/800x599",
-		width: 4,
-		height: 3
-	},
-	{
-		src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
-		width: 4,
-		height: 3
-	}
-]; */
-
 class SiteGalleryPage extends React.Component {
 	constructor() {
 		super();
@@ -154,17 +105,19 @@ class SiteGalleryPage extends React.Component {
 					</Header>
 				</Grid.Row>
 				<Grid.Row>
-					<div>
-						<Gallery photos={photos} onClick={this.openLightbox} />
-						<Lightbox
-							images={photos}
-							isOpen={this.state.lightboxIsOpen}
-							onClickPrev={this.gotoPrevious}
-							onClickNext={this.gotoNext}
-							currentImage={this.state.currentImage}
-							onClose={this.closeLightbox}
-						/>
-					</div>
+					<Gallery
+						onClick={this.openLightbox}
+						photos={photos}
+						columns={4}
+					/>
+					<Lightbox
+						images={photos}
+						isOpen={this.state.lightboxIsOpen}
+						onClickPrev={this.gotoPrevious}
+						onClickNext={this.gotoNext}
+						currentImage={this.state.currentImage}
+						onClose={this.closeLightbox}
+					/>
 				</Grid.Row>
 			</Grid>
 		);

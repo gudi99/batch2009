@@ -1,16 +1,16 @@
 import React from "react";
-import { Header, Segment, Image, Grid } from "semantic-ui-react";
+import { Header, Segment, Image, Grid, Label, Icon } from "semantic-ui-react";
 import profileDummyPic from "../images/my pic.jpg";
 import InfoPanels from "../collections/InfoPanels";
 
-class MyDashboardPage extends React.Component {
+class MyProfilePage extends React.Component {
 	state = {};
 
 	render() {
 		return (
 			<Grid centered textAlign="center" stackable>
 				<Grid.Row centered>
-					<Header as="h1" content="My Dashboard" color="teal" />
+					<Header as="h1" content="My Profile" color="teal" />
 				</Grid.Row>
 				<Grid.Row centered columns={5}>
 					<Grid.Column>
@@ -20,6 +20,14 @@ class MyDashboardPage extends React.Component {
 								size="medium"
 								centered
 							/>
+							{
+								// This should appear if user is viewing his profile in My profile time only.
+								// If he come to this page from status cards, then this should not display
+								<Label attached="top right" as="a">
+									<Icon name="upload" />
+									Upload
+								</Label>
+							}
 						</Segment>
 					</Grid.Column>
 				</Grid.Row>
@@ -36,6 +44,14 @@ class MyDashboardPage extends React.Component {
 									University
 								</Segment>
 							</Segment.Group>
+							{
+								// This should appear if user is viewing his profile in My profile time only.
+								// If he come to this page from status cards, then this should not display
+								<Label attached="top right" as="a">
+									<Icon name="edit" />
+									Edit
+								</Label>
+							}
 						</Segment.Group>
 					</Grid.Column>
 				</Grid.Row>
@@ -50,4 +66,4 @@ class MyDashboardPage extends React.Component {
 	}
 }
 
-export default MyDashboardPage;
+export default MyProfilePage;

@@ -14,12 +14,13 @@ import logoImage from "../images/icon.png";
 import AnnouncementsPage from "./AnnouncementsPage";
 import StatusPage from "./StatusPage";
 import FeedPage from "./FeedPage";
-import MyDashboardPage from "./MyDashboardPage";
+import MyProfilePage from "./MyProfilePage";
 import SiteGalleryPage from "./SiteGalleryPage";
-import FeedbackPage from "./FeedbackPage";
+import ContactPage from "./ContactPage";
+import DefaultDashboard from "./DefaultDashboard";
 
 class DashboardPage extends React.Component {
-	state = { activeItem: "Dashboard", visible: false };
+	state = { activeItem: "", visible: false };
 
 	handleItemClick = (e, { name }) =>
 		this.setState({
@@ -65,10 +66,10 @@ class DashboardPage extends React.Component {
 						<FeedPage />
 					</div>
 				];
-			case "Dashboard":
+			case "MyProfile":
 				return [
 					<div key={this.state.activeItem}>
-						<MyDashboardPage />
+						<MyProfilePage />
 					</div>
 				];
 			case "SiteGallery":
@@ -77,16 +78,22 @@ class DashboardPage extends React.Component {
 						<SiteGalleryPage />
 					</div>
 				];
-			case "Feedback":
+			case "Contact":
 				return [
 					<div key={this.state.activeItem}>
-						<FeedbackPage />
+						<ContactPage />
+					</div>
+				];
+			case "Dashboard":
+				return [
+					<div key={this.state.activeItem}>
+						<DefaultDashboard />
 					</div>
 				];
 			default:
 				return [
 					<div key={this.state.activeItem}>
-						<MyDashboardPage />
+						<DefaultDashboard />
 					</div>
 				];
 		}
@@ -139,7 +146,8 @@ class DashboardPage extends React.Component {
 								<Label color="red" horizontal size="small">
 									2
 								</Label>
-								<Icon name="bullhorn" />Announcements
+								<Icon name="bullhorn" />
+								Announcements
 							</Menu.Item>
 
 							<Menu.Item
@@ -147,7 +155,8 @@ class DashboardPage extends React.Component {
 								active={activeItem === "Status"}
 								onClick={this.handleItemClick}
 							>
-								<Icon name="address card" />Status
+								<Icon name="address card" />
+								Status
 							</Menu.Item>
 
 							<Menu.Item
@@ -158,31 +167,35 @@ class DashboardPage extends React.Component {
 								<Label color="red" horizontal size="small">
 									10
 								</Label>
-								<Icon name="feed" />Feed
+								<Icon name="feed" />
+								Feed
 							</Menu.Item>
 						</Segment>
 
 						<Menu.Item />
 						<Menu.Item
-							name="Dashboard"
-							active={activeItem === "Dashboard"}
+							name="MyProfile"
+							active={activeItem === "MyProfile"}
 							onClick={this.handleItemClick}
 						>
-							<Icon name="dashboard" />MyDashboard
+							<Icon name="dashboard" />
+							MyProfile
 						</Menu.Item>
 						<Menu.Item
 							name="SiteGallery"
 							active={activeItem === "SiteGallery"}
 							onClick={this.handleItemClick}
 						>
-							<Icon name="images" />Site Gallery
+							<Icon name="images" />
+							Site Gallery
 						</Menu.Item>
 						<Menu.Item
-							name="Feedback"
-							active={activeItem === "Feedback"}
+							name="Contact"
+							active={activeItem === "Contact"}
 							onClick={this.handleItemClick}
 						>
-							<Icon name="alarm" />Feedback
+							<Icon name="alarm" />
+							Contact Developer
 						</Menu.Item>
 					</Sidebar>
 
@@ -192,22 +205,20 @@ class DashboardPage extends React.Component {
 								minWidth={Responsive.onlyTablet.minWidth}
 							>
 								<Button
-									icon
+									labelPosition="left"
+									content="Sidebar"
+									icon="bars"
 									onClick={this.handleButtonClick}
-									labelPosition="right"
 									color="teal"
 									size="tiny"
-								>
-									Sidebar
-									<Icon name="bars" />
-								</Button>
+								/>
 
 								{/* <NavBar /> */}
 
 								{activeItem === "Announcements" ||
 								activeItem === "Status" ||
 								activeItem === "Feed" ||
-								activeItem === "Feedback" ||
+								activeItem === "Contact" ||
 								activeItem === "SiteGallery" ? (
 									<Button.Group floated="right" size="tiny">
 										<Button
@@ -281,7 +292,7 @@ class DashboardPage extends React.Component {
 								{activeItem === "Announcements" ||
 								activeItem === "Status" ||
 								activeItem === "Feed" ||
-								activeItem === "Feedback" ||
+								activeItem === "Contact" ||
 								activeItem === "SiteGallery" ? (
 									<Button.Group floated="right">
 										<Button
