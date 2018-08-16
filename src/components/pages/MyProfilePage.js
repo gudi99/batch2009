@@ -2,6 +2,7 @@ import React from "react";
 import { Header, Segment, Image, Grid, Label, Icon } from "semantic-ui-react";
 import profileDummyPic from "../images/my pic.jpg";
 import InfoPanels from "../collections/InfoPanels";
+import EditName from "../modals/EditName";
 
 class MyProfilePage extends React.Component {
 	state = {};
@@ -44,20 +45,22 @@ class MyProfilePage extends React.Component {
 									University
 								</Segment>
 							</Segment.Group>
-							<Segment.Group horizontal>
-								<Segment as="h5">Articles</Segment>
-								<Segment>4</Segment>
-								<Segment as="h5">Gallery</Segment>
-								<Segment>16</Segment>
-							</Segment.Group>
+
 							{
 								// This should appear if user is viewing his profile in My profile time only.
 								// If he come to this page from status cards, then this should not display
-								<Label attached="top right" as="a">
-									<Icon name="edit" />
-									Edit
-								</Label>
+								<EditName />
 							}
+						</Segment.Group>
+						<Segment.Group horizontal>
+							<Segment as="h5" color="teal">
+								Articles
+							</Segment>
+							<Segment color="teal">4</Segment>
+							<Segment as="h5" color="teal">
+								Gallery
+							</Segment>
+							<Segment color="teal">16</Segment>
 						</Segment.Group>
 					</Grid.Column>
 				</Grid.Row>

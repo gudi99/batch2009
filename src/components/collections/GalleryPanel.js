@@ -7,37 +7,42 @@ class GalleryPanel extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div
+				style={{
+					marginTop: "20px",
+					marginBottom: "40px"
+				}}
+			>
 				<Responsive minWidth={Responsive.onlyTablet.minWidth}>
 					<Card.Group itemsPerRow={4}>
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
 					</Card.Group>
 				</Responsive>
 				<Responsive {...Responsive.onlyMobile}>
 					<Card.Group itemsPerRow={1}>
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
-						<Card color='teal' image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
+						<Card color="teal" image={gImg} />
 					</Card.Group>
 				</Responsive>
 			</div>

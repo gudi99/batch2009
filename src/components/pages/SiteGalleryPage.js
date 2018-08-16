@@ -98,7 +98,11 @@ class SiteGalleryPage extends React.Component {
 
 	render() {
 		return (
-			<Grid>
+			<Grid
+				style={{
+					minHeight: window.innerHeight
+				}}
+			>
 				<Grid.Row centered>
 					<Header color="teal" as="h2">
 						Site Gallery

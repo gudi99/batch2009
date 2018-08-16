@@ -7,10 +7,15 @@ import {
 	Container,
 	Button
 } from "semantic-ui-react";
+import PropTypes from "prop-types";
 import IconPic from "../images/icon.png";
 
-const Page404 = () => {
+const Page404 = props => {
 	const h1 = "h1";
+
+	const onClick = () => {
+		props.history.push("/dashboard");
+	};
 
 	return (
 		<Grid
@@ -20,7 +25,12 @@ const Page404 = () => {
 		>
 			<Grid.Row columns={2}>
 				<Grid.Column textAlign="center">
-					<Segment raised textAlign="center" color="teal">
+					<Segment
+						raised
+						textAlign="center"
+						color="teal"
+						style={{ marginLeft: "-30px", minWidth: "250px" }}
+					>
 						<Container align="center">
 							<Image src={IconPic} size="small" />
 						</Container>
@@ -31,11 +41,23 @@ const Page404 = () => {
 							This is not the page you are looking for!
 						</Header>
 					</Segment>
-					<Button color="teal" content="Go to Home" size="medium" />
+					<Button
+						color="teal"
+						content="Go to Home"
+						size="medium"
+						onClick={onClick}
+						style={{ marginLeft: "25px" }}
+					/>
 				</Grid.Column>
 			</Grid.Row>
 		</Grid>
 	);
+};
+
+Page404.propTypes = {
+	history: PropTypes.shape({
+		push: PropTypes.func.isRequired
+	}).isRequired
 };
 
 export default Page404;

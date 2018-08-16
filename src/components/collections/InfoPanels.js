@@ -194,23 +194,21 @@ class InfoPanels extends Component {
 				</Responsive>
 
 				<Responsive {...Responsive.onlyMobile}>
-					<container>
-						<Button.Group color="teal" attached="top">
-							<Button>Tabs</Button>
-							<Dropdown
-								button
-								floating
-								openOnFocus
-								className="icon"
-								defaultValue="BasicInfo"
-								options={options}
-								onChange={this.handleChange}
-							/>
-						</Button.Group>
-						<div attached="bottom" style={{ marginTop: "5px" }}>
-							{this.returnSwitch(activeItem)}
-						</div>
-					</container>
+					<Button.Group color="teal" attached="top">
+						<Button>Tabs</Button>
+						<Dropdown
+							button
+							floating
+							openOnFocus
+							className="icon"
+							defaultValue="BasicInfo"
+							options={options}
+							onChange={this.handleChange}
+						/>
+					</Button.Group>
+					<div attached="bottom" style={{ marginTop: "5px" }}>
+						{this.returnSwitch(activeItem)}
+					</div>
 				</Responsive>
 			</div>
 		);
