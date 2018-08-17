@@ -119,29 +119,31 @@ class SiteGalleryPage extends React.Component {
 						Site Gallery
 					</Header>
 				</Grid.Row>
-				<Grid.Row columns={1} centered>
-					<Grid.Column>
-						<Card.Group>
-							{photos.map(photo => (
-								<Card
-									color="teal"
-									image={photo.src}
-									as="a"
-									id={photo.id}
-									key={photo.id}
-									onClick={this.openLightbox}
-								/>
-							))}
-						</Card.Group>
-						<Lightbox
-							images={photos}
-							isOpen={this.state.lightboxIsOpen}
-							onClickPrev={this.gotoPrevious}
-							onClickNext={this.gotoNext}
-							currentImage={this.state.currentImage}
-							onClose={this.closeLightbox}
-						/>
-					</Grid.Column>
+				<Grid.Row columns={6} centered>
+					{photos.map(photo => (
+						<Grid.Column key={photo.id}>
+							<Card
+								color="teal"
+								image={photo.src}
+								as="a"
+								id={photo.id - 1}
+								onClick={this.openLightbox}
+								style={{
+									marginTop: "10px",
+									marginBottom: "10px"
+								}}
+							/>
+						</Grid.Column>
+					))}
+
+					<Lightbox
+						images={photos}
+						isOpen={this.state.lightboxIsOpen}
+						onClickPrev={this.gotoPrevious}
+						onClickNext={this.gotoNext}
+						currentImage={this.state.currentImage}
+						onClose={this.closeLightbox}
+					/>
 				</Grid.Row>
 			</Grid>
 		);

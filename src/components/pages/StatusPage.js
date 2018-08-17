@@ -7,9 +7,9 @@ import {
 	Dropdown,
 	Search,
 	Card,
-	Responsive,
 	Icon,
-	Image
+	Image,
+	Button
 } from "semantic-ui-react";
 import gImg from "../images/my pic.jpg";
 
@@ -52,7 +52,12 @@ class StatusPage extends React.Component {
 		const { isLoading, value, results } = this.state;
 
 		return (
-			<Grid centered textAlign="center" stackable>
+			<Grid
+				centered
+				textAlign="center"
+				stackable
+				style={{ minHeight: window.innerHeight }}
+			>
 				<Grid.Row centered>
 					<Header as="h1" content="Status Page" color="teal" />
 				</Grid.Row>
@@ -93,365 +98,241 @@ class StatusPage extends React.Component {
 						</Dropdown>
 					</Grid.Column>
 				</Grid.Row>
-				<Grid.Row>
-					<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-						<Card.Group itemsPerRow={4} color="teal">
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-								<Card.Content>
-									<Card.Header>Matthew</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
+				<Grid.Row align="middle">
+					{/* <Responsive minWidth={Responsive.onlyTablet.minWidth}> */}
+					<Grid.Column width={4}>
+						<Card color="teal">
+							<Card.Content>
+								<Image
+									src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+									floated="right"
+									size="mini"
+								/>
+								<Card.Header>Matthew</Card.Header>
+								<Card.Meta>
+									<span className="date">
+										2009 (6th) - 2016 (12th)
+									</span>
+								</Card.Meta>
+								<Card.Description>
+									Studying B.Sc at Gitam University,
+									Visakhapatnam
+								</Card.Description>
+							</Card.Content>
+							<Card.Content extra>
+								<div className="ui two buttons">
+									<Button basic color="teal">
 										<Icon name="pencil" />
 										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
+									</Button>
+									&nbsp;&nbsp;&nbsp;
+									<Button basic color="teal">
 										<Icon name="images" />
 										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src={gImg} />
-								<Card.Content>
-									<Card.Header>Saka Sai Trinath</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Tech at Lovely Professional
-										University, Punjab
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
+									</Button>
+								</div>
+							</Card.Content>
+						</Card>
+					</Grid.Column>
+					<Grid.Column width={4}>
+						<Card color="teal">
+							<Card.Content>
+								<Image src={gImg} floated="right" size="mini" />
+								<Card.Header>Saka Sai Trinath</Card.Header>
+								<Card.Meta>
+									<span className="date">
+										2009 (6th) - 2016 (12th)
+									</span>
+								</Card.Meta>
+								<Card.Description>
+									Studying B.Tech at Lovely Professional
+									University, Punjab
+								</Card.Description>
+							</Card.Content>
+							<Card.Content extra>
+								<div className="ui two buttons">
+									<Button basic color="teal">
 										<Icon name="pencil" />
 										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
+									</Button>
+									&nbsp;&nbsp;&nbsp;
+									<Button basic color="teal">
 										<Icon name="images" />
 										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg" />
-								<Card.Content>
-									<Card.Header>Elliot Baker</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
+									</Button>
+								</div>
+							</Card.Content>
+						</Card>
+					</Grid.Column>
+					<Grid.Column width={4}>
+						<Card color="teal">
+							<Card.Content>
+								<Image
+									src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg"
+									floated="right"
+									size="mini"
+								/>
+								<Card.Header>Elliot Baker</Card.Header>
+								<Card.Meta>
+									<span className="date">
+										2009 (6th) - 2016 (12th)
+									</span>
+								</Card.Meta>
+								<Card.Description>
+									Studying B.Sc at Gitam University,
+									Visakhapatnam
+								</Card.Description>
+							</Card.Content>
+							<Card.Content extra>
+								<div className="ui two buttons">
+									<Button basic color="teal">
 										<Icon name="pencil" />
 										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
+									</Button>
+									&nbsp;&nbsp;&nbsp;
+									<Button basic color="teal">
 										<Icon name="images" />
 										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" />
-								<Card.Content>
-									<Card.Header>Steve Sanders</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
+									</Button>
+								</div>
+							</Card.Content>
+						</Card>
+					</Grid.Column>
+					<Grid.Column width={4}>
+						<Card color="teal">
+							<Card.Content>
+								<Image
+									src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+									floated="right"
+									size="mini"
+								/>
+								<Card.Header>Steve Sanders</Card.Header>
+								<Card.Meta>
+									<span className="date">
+										2009 (6th) - 2016 (12th)
+									</span>
+								</Card.Meta>
+								<Card.Description>
+									Studying B.Sc at Gitam University,
+									Visakhapatnam
+								</Card.Description>
+							</Card.Content>
+							<Card.Content extra>
+								<div className="ui two buttons">
+									<Button basic color="teal">
 										<Icon name="pencil" />
 										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
+									</Button>
+									&nbsp;&nbsp;&nbsp;
+									<Button basic color="teal">
 										<Icon name="images" />
 										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/molly.png" />
-								<Card.Content>
-									<Card.Header>Molly Thomas</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
+									</Button>
+								</div>
+							</Card.Content>
+						</Card>
+					</Grid.Column>
+					<Grid.Column width={4}>
+						<Card color="teal">
+							<Card.Content>
+								<Image
+									src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+									floated="right"
+									size="mini"
+								/>
+								<Card.Header>Molly Thomas</Card.Header>
+								<Card.Meta>
+									<span className="date">
+										2009 (6th) - 2016 (12th)
+									</span>
+								</Card.Meta>
+								<Card.Description>
+									Studying B.Sc at Gitam University,
+									Visakhapatnam
+								</Card.Description>
+							</Card.Content>
+							<Card.Content extra>
+								<div className="ui two buttons">
+									<Button basic color="teal">
 										<Icon name="pencil" />
 										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
+									</Button>
+									&nbsp;&nbsp;&nbsp;
+									<Button basic color="teal">
 										<Icon name="images" />
 										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/jenny.jpg" />
-								<Card.Content>
-									<Card.Header>Jenny Lawrence</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
+									</Button>
+								</div>
+							</Card.Content>
+						</Card>
+					</Grid.Column>
+					<Grid.Column width={4}>
+						<Card color="teal">
+							<Card.Content>
+								<Image
+									src="https://react.semantic-ui.com/images/avatar/large/jenny.jpg"
+									floated="right"
+									size="mini"
+								/>
+								<Card.Header>Jenny Lawrence</Card.Header>
+								<Card.Meta>
+									<span className="date">
+										2009 (6th) - 2016 (12th)
+									</span>
+								</Card.Meta>
+								<Card.Description>
+									Studying B.Sc at Gitam University,
+									Visakhapatnam
+								</Card.Description>
+							</Card.Content>
+							<Card.Content extra>
+								<div className="ui two buttons">
+									<Button basic color="teal">
 										<Icon name="pencil" />
 										Articles
-									</a>
-									<a>
+									</Button>
+									<Button basic color="teal">
 										<Icon name="images" />
 										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" />
-								<Card.Content>
-									<Card.Header>Daniel</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
+									</Button>
+								</div>
+							</Card.Content>
+						</Card>
+					</Grid.Column>
+					<Grid.Column width={4}>
+						<Card color="teal">
+							<Card.Content>
+								<Image
+									src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg"
+									floated="right"
+									size="mini"
+								/>
+								<Card.Header>Daniel</Card.Header>
+								<Card.Meta>
+									<span className="date">
+										2009 (6th) - 2016 (12th)
+									</span>
+								</Card.Meta>
+								<Card.Description>
+									Studying B.Sc at Gitam University,
+									Visakhapatnam
+								</Card.Description>
+							</Card.Content>
+							<Card.Content extra>
+								<div className="ui two buttons">
+									<Button basic color="teal">
 										<Icon name="pencil" />
 										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
+									</Button>
+									&nbsp;&nbsp;&nbsp;
+									<Button basic color="teal">
 										<Icon name="images" />
 										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-						</Card.Group>
-					</Responsive>
-					<Responsive {...Responsive.onlyMobile}>
-						<Card.Group itemsPerRow={1} color="teal">
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-								<Card.Content>
-									<Card.Header>Matthew</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
-										<Icon name="pencil" />
-										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
-										<Icon name="images" />
-										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src={gImg} />
-								<Card.Content>
-									<Card.Header>Saka Sai Trinath</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Tech at Lovely Professional
-										University, Punjab
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
-										<Icon name="pencil" />
-										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
-										<Icon name="images" />
-										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg" />
-								<Card.Content>
-									<Card.Header>Elliot Baker</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
-										<Icon name="pencil" />
-										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
-										<Icon name="images" />
-										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" />
-								<Card.Content>
-									<Card.Header>Steve Sanders</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
-										<Icon name="pencil" />
-										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
-										<Icon name="images" />
-										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/molly.png" />
-								<Card.Content>
-									<Card.Header>Molly Thomas</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
-										<Icon name="pencil" />
-										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
-										<Icon name="images" />
-										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/jenny.jpg" />
-								<Card.Content>
-									<Card.Header>Jenny Lawrence</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
-										<Icon name="pencil" />
-										Articles
-									</a>
-									<a>
-										<Icon name="images" />
-										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-							<Card>
-								<Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" />
-								<Card.Content>
-									<Card.Header>Daniel</Card.Header>
-									<Card.Meta>
-										<span className="date">
-											2009 (6th) - 2016 (12th)
-										</span>
-									</Card.Meta>
-									<Card.Description>
-										Studying B.Sc at Gitam University,
-										Visakhapatnam
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<a>
-										<Icon name="pencil" />
-										Articles
-									</a>&nbsp;&nbsp;&nbsp;
-									<a>
-										<Icon name="images" />
-										Gallery
-									</a>
-								</Card.Content>
-							</Card>
-						</Card.Group>
-					</Responsive>
+									</Button>
+								</div>
+							</Card.Content>
+						</Card>
+					</Grid.Column>
 				</Grid.Row>
 			</Grid>
 		);
