@@ -182,7 +182,7 @@ class StatusPage extends React.Component {
 					<Header as="h1" content="Status Page" color="teal" />
 				</Grid.Row>
 				<Grid.Row>
-					<Grid.Column width={8}>
+					{/* <Grid.Column width={8}>
 						<Search
 							loading={isLoading}
 							onResultSelect={this.handleResultSelect}
@@ -195,7 +195,7 @@ class StatusPage extends React.Component {
 							value={value}
 							{...this.props}
 						/>
-					</Grid.Column>
+					</Grid.Column> */}
 					<Grid.Column width={2}>
 						<Dropdown
 							text="Filter"

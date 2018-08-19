@@ -2,7 +2,7 @@ import React from "react";
 import { Header, Segment, Image, Grid, Label, Icon } from "semantic-ui-react";
 import profileDummyPic from "../images/my pic.jpg";
 import InfoPanels from "../collections/InfoPanels";
-import EditName from "../modals/EditName";
+import EditStatus from "../modals/EditStatus";
 
 class MyProfilePage extends React.Component {
 	state = {};
@@ -49,7 +49,7 @@ class MyProfilePage extends React.Component {
 							{
 								// This should appear if user is viewing his profile in My profile time only.
 								// If he come to this page from status cards, then this should not display
-								<EditName />
+								<EditStatus />
 							}
 						</Segment.Group>
 						<Segment.Group horizontal>
