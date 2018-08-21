@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, withRouter } from "react-router-dom";
 import { Button, Icon } from "semantic-ui-react";
 import PropTypes from "prop-types";
 
@@ -22,7 +23,6 @@ class NavBar extends React.Component {
 						/>
 
 						{/* <NavBar /> */}
-
 						{activeItem === "announcements" ||
 						activeItem === "status" ||
 						activeItem === "feed" ||
@@ -30,6 +30,8 @@ class NavBar extends React.Component {
 						activeItem === "sitegallery" ? (
 							<Button.Group floated="right" size="tiny">
 								<Button
+									to="/d/dashboard"
+									as={NavLink}
 									icon
 									labelPosition="right"
 									color="blue"
@@ -78,9 +80,10 @@ class NavBar extends React.Component {
 							<Button.Group floated="right">
 								<Button
 									icon="dashboard"
+									to="/d/dashboard"
+									as={NavLink}
 									color="blue"
 									size="tiny"
-									onClick={this.props.toDashboard}
 								/>
 								<Button
 									icon="setting"
@@ -122,4 +125,4 @@ NavBar.propTypes = {
 	toDashboard: PropTypes.func.isRequired
 };
 
-export default NavBar;
+export default withRouter(NavBar);

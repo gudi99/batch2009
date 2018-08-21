@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import {
 	Sidebar,
@@ -51,6 +51,8 @@ class SideBar extends React.Component {
 
 				<Segment raised size="big">
 					<Menu.Item
+						to="/d/announcements"
+						as={NavLink}
 						name="announcements"
 						active={activeItem === "announcements"}
 						onClick={this.props.handleItemClick}
@@ -69,6 +71,8 @@ class SideBar extends React.Component {
 
 					<Menu.Item
 						name="status"
+						as={NavLink}
+						to="/d/status"
 						active={activeItem === "status"}
 						onClick={this.props.handleItemClick}
 					>
@@ -78,6 +82,8 @@ class SideBar extends React.Component {
 
 					<Menu.Item
 						name="feed"
+						as={NavLink}
+						to="/d/feed"
 						active={activeItem === "feed"}
 						onClick={this.props.handleItemClick}
 					>
@@ -92,6 +98,8 @@ class SideBar extends React.Component {
 				<Menu.Item />
 				<Menu.Item
 					name="myprofile"
+					as={NavLink}
+					to="/d/myprofile"
 					active={activeItem === "myprofile"}
 					onClick={this.props.handleItemClick}
 				>
@@ -100,6 +108,8 @@ class SideBar extends React.Component {
 				</Menu.Item>
 				<Menu.Item
 					name="sitegallery"
+					as={NavLink}
+					to="/d/sitegallery"
 					active={activeItem === "sitegallery"}
 					onClick={this.props.handleItemClick}
 				>
@@ -108,6 +118,8 @@ class SideBar extends React.Component {
 				</Menu.Item>
 				<Menu.Item
 					name="contact"
+					as={NavLink}
+					to="/d/contact"
 					active={activeItem === "contact"}
 					onClick={this.props.handleItemClick}
 				>
@@ -126,4 +138,4 @@ SideBar.propTypes = {
 	handleItemClick: PropTypes.func.isRequired
 };
 
-export default SideBar;
+export default withRouter(SideBar);

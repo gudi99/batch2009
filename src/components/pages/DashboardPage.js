@@ -2,9 +2,8 @@ import React from "react";
 import {
 	BrowserRouter as Router,
 	Route,
-	Redirect,
-	Switch,
-	withRouter
+	// Redirect,
+	Switch
 } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Sidebar, Segment, Responsive } from "semantic-ui-react";
@@ -66,7 +65,7 @@ const routes = [
 ];
 
 class DashboardPage extends React.Component {
-	state = { activeItem: "dashboard", visible: false };
+	state = { activeItem: "", visible: false };
 
 	handleItemClick = (e, { name }) => {
 		this.setState({
@@ -89,93 +88,8 @@ class DashboardPage extends React.Component {
 
 	toDashboard = () => {
 		this.setState({
-			activeItem: "dashboard"
+			activeItem: ""
 		});
-	};
-
-	/* returnSwitch = param => {
-		switch (param) {
-			case "Announcements":
-				this.props.history.push("/d/announcements");
-				break;
-			case "Status":
-				this.props.history.push("/d/status");
-				break;
-			case "Feed":
-				this.props.history.push("/d/feed");
-				break;
-			case "MyProfile":
-				this.props.history.push("/d/myprofile");
-				break;
-			case "SiteGallery":
-				this.props.history.push("/d/sitegallery");
-				break;
-			case "Contact":
-				this.props.history.push("/d/contact");
-				break;
-			case "Dashboard":
-				this.props.history.push("/d/dashboard");
-				break;
-			default:
-				this.props.history.push("/d/dashboard");
-				break;
-		}
-	}; */
-
-	returnSwitch = param => {
-		switch (param) {
-			case "dashboard":
-				return [
-					<div key={this.state.activeItem}>
-						{/* <DefaultDashboard /> */}
-						<Redirect push to="/d/dashboard" />
-					</div>
-				];
-			case "announcements":
-				return [
-					<div key={this.state.activeItem}>
-						{/* <AnnouncementsPage /> */}
-						<Redirect to="/d/announcements" />
-					</div>
-				];
-			case "status":
-				return [
-					<div key={this.state.activeItem}>
-						{/* <StatusPage /> */}
-						<Redirect to="/d/status" />
-					</div>
-				];
-			case "feed":
-				return [
-					<div key={this.state.activeItem}>
-						{/* <FeedPage /> */}
-						<Redirect to="/d/feed" />
-					</div>
-				];
-			case "myprofile":
-				return [
-					<div key={this.state.activeItem}>
-						{/* <MyProfilePage /> */}
-						<Redirect to="/d/myprofile" />
-					</div>
-				];
-			case "sitegallery":
-				return [
-					<div key={this.state.activeItem}>
-						{/* <SiteGalleryPage /> */}
-						<Redirect to="/d/sitegallery" />
-					</div>
-				];
-			case "contact":
-				return [
-					<div key={this.state.activeItem}>
-						{/* <ContactPage /> */}
-						<Redirect to="/d/contact" />
-					</div>
-				];
-			default:
-				return null;
-		}
 	};
 
 	render() {
@@ -227,7 +141,6 @@ class DashboardPage extends React.Component {
 													/>
 												))}
 											</Switch>
-											{this.returnSwitch(activeItem)}
 										</Segment>
 									</div>
 								</Responsive>
@@ -260,8 +173,10 @@ class DashboardPage extends React.Component {
 													component={route.sidebar}
 												/>
 											))}
+											<Route
+												component={DefaultDashboard}
+											/>
 										</Switch>
-										{this.returnSwitch(activeItem)}
 									</Segment>
 								</Responsive>
 							</Segment>

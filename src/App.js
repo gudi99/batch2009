@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import WelcomePage from "./components/pages/WelcomePage";
 import DashboardPage from "./components/pages/DashboardPage";
 import Page404 from "./components/pages/Page404";
@@ -33,7 +33,6 @@ const App = () => (
 					component={route.component}
 				/>
 			))}
-			<Redirect from="/d" to="/d/dashboard" />
 			<Route component={Page404} />
 		</Switch>
 	</div>
