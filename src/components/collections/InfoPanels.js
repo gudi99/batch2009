@@ -22,49 +22,81 @@ const routes = [
 		id: BasicInfoPanel,
 		path: "/basic",
 		exact: true,
-		component: BasicInfoPanel
+		component: BasicInfoPanel,
+		key: "BasicInfo",
+		icon: "info",
+		text: "Basic Info",
+		value: "BasicInfo"
 	},
 	{
 		id: SchoolInfoPanel,
 		path: "/school",
 		exact: true,
-		component: SchoolInfoPanel
+		component: SchoolInfoPanel,
+		key: "SchoolInfo",
+		icon: "university",
+		text: "School Info",
+		value: "SchoolInfo"
 	},
 	{
 		id: AfterNavodayaPanel,
 		path: "/afternavodaya",
 		exact: true,
-		component: AfterNavodayaPanel
+		component: AfterNavodayaPanel,
+		key: "AfterNavodaya",
+		icon: "wait",
+		text: "After Navodaya",
+		value: "AfterNavodaya"
 	},
 	{
 		id: SocialAccountsPanel,
 		path: "/social",
 		exact: true,
-		component: SocialAccountsPanel
+		component: SocialAccountsPanel,
+		key: "SocialAccounts",
+		icon: "at",
+		text: "Social Accounts",
+		value: "SocialAccounts"
 	},
 	{
 		id: FavouritesPanel,
 		path: "/favorites",
 		exact: true,
-		component: FavouritesPanel
+		component: FavouritesPanel,
+		key: "Favourites",
+		icon: "favorite",
+		text: "Favourites",
+		value: "Favourites"
 	},
 	{
 		id: FirstThingsPanel,
 		path: "/firstthings",
 		exact: true,
-		component: FirstThingsPanel
+		component: FirstThingsPanel,
+		key: "FirstThings",
+		icon: "first order",
+		text: "First Things",
+		value: "FirstThings"
 	},
 	{
 		id: ArticlesPanel,
 		path: "/articles",
 		exact: true,
-		component: ArticlesPanel
+		component: ArticlesPanel,
+		key: "Articles",
+		icon: "list",
+		text: "Articles",
+		value: "Articles"
 	},
 	{
 		id: GalleryPanel,
 		path: "/gallery",
 		exact: true,
-		component: GalleryPanel
+		component: GalleryPanel,
+		key: "Gallery",
+		icon: "photo",
+		text: "Gallery",
+		value: "Gallery"
 	}
 ];
 
@@ -136,56 +168,6 @@ class InfoPanels extends Component {
 
 	render() {
 		const { activeItem } = this.state;
-		const options = [
-			{
-				key: "BasicInfo",
-				icon: "info",
-				text: "Basic Info",
-				value: "BasicInfo"
-			},
-			{
-				key: "SchoolInfo",
-				icon: "university",
-				text: "School Info",
-				value: "SchoolInfo"
-			},
-			{
-				key: "AfterNavodaya",
-				icon: "wait",
-				text: "After Navodaya",
-				value: "AfterNavodaya"
-			},
-			{
-				key: "SocialAccounts",
-				icon: "at",
-				text: "Social Accounts",
-				value: "SocialAccounts"
-			},
-			{
-				key: "Favourites",
-				icon: "favorite",
-				text: "Favourites",
-				value: "Favourites"
-			},
-			{
-				key: "FirstThings",
-				icon: "first order",
-				text: "First Things",
-				value: "FirstThings"
-			},
-			{
-				key: "Articles",
-				icon: "list",
-				text: "Articles",
-				value: "Articles"
-			},
-			{
-				key: "Gallery",
-				icon: "photo",
-				text: "Gallery",
-				value: "Gallery"
-			}
-		];
 
 		return (
 			<Router>
@@ -288,9 +270,22 @@ class InfoPanels extends Component {
 								openOnFocus
 								className="icon"
 								defaultValue="BasicInfo"
-								options={options}
+								// options={options}
 								onChange={this.handleChange}
-							/>
+							>
+								<Dropdown.Menu>
+									{routes.map(route => (
+										<Dropdown.Item
+											as={NavLink}
+											to={route.path}
+											key={route.key}
+											value={route.value}
+											text={route.text}
+											icon={route.icon}
+										/>
+									))}
+								</Dropdown.Menu>
+							</Dropdown>
 						</Button.Group>
 						<div attached="bottom" style={{ marginTop: "5px" }}>
 							<Switch>

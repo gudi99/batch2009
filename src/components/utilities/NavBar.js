@@ -84,6 +84,7 @@ class NavBar extends React.Component {
 									as={NavLink}
 									color="blue"
 									size="tiny"
+									onClick={this.props.toDashboard}
 								/>
 								<Button
 									icon="setting"

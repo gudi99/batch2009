@@ -3,8 +3,7 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Switch,
-	withRouter,
-	Redirect
+	withRouter
 } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -90,7 +89,7 @@ class DashboardPage extends React.Component {
 
 	toDashboard = () => {
 		this.setState({
-			activeItem: ""
+			activeItem: "dashboard"
 		});
 	};
 
@@ -177,15 +176,16 @@ class DashboardPage extends React.Component {
 											{routes.map(route => (
 												<Route
 													key={route.id}
-													path={route.path}
+													path={
+														this.props.match.path +
+														route.path
+													}
 													exact={route.exact}
-													component={route.component}
+													component={route.sidebar}
 												/>
 											))}
 											<Route
-												render={() => (
-													<DefaultDashboard />
-												)}
+												component={DefaultDashboard}
 											/>
 										</Switch>
 									</Segment>
@@ -205,7 +205,7 @@ DashboardPage.propTypes = {
 		match: PropTypes.shape({
 			path: PropTypes.string.isRequired
 		}),
-		isConfirmend: PropTypes.bool.isRequired
+		isConfirmend: PropTypes.bool
 	}).isRequired
 };
 
