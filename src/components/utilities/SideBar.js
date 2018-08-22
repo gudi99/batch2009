@@ -51,8 +51,8 @@ class SideBar extends React.Component {
 
 				<Segment raised size="big">
 					<Menu.Item
-						to="/d/announcements"
 						as={NavLink}
+						to="/d/announcements"
 						name="announcements"
 						active={activeItem === "announcements"}
 						onClick={this.props.handleItemClick}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Grid, Header, Card } from "semantic-ui-react";
 
 class DefaultDashboard extends React.Component {
@@ -21,8 +22,10 @@ class DefaultDashboard extends React.Component {
 				<Grid.Row>
 					<Grid.Column>
 						<Card
+							as={Link}
+							to="/d/myprofile/school"
 							color="teal"
-							header="My Dashboard"
+							header="My Schoolinfp"
 							description="Visit My Dashboard"
 							href="#"
 						/>

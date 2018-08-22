@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+// import PropTypes from "prop-types";
 import WelcomePage from "./components/pages/WelcomePage";
 import DashboardPage from "./components/pages/DashboardPage";
 import Page404 from "./components/pages/Page404";

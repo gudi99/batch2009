@@ -2,9 +2,11 @@ import React from "react";
 import {
 	BrowserRouter as Router,
 	Route,
-	// Redirect,
-	Switch
+	Switch,
+	withRouter,
+	Redirect
 } from "react-router-dom";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Sidebar, Segment, Responsive } from "semantic-ui-react";
 
@@ -23,43 +25,43 @@ const routes = [
 	{
 		id: "dashboard",
 		exact: true,
-		path: "/d/dashboard",
+		path: "/dashboard",
 		sidebar: DefaultDashboard
 	},
 	{
 		id: "announcements",
 		exact: true,
-		path: "/d/announcements",
+		path: "/announcements",
 		sidebar: AnnouncementsPage
 	},
 	{
 		id: "status",
 		exact: true,
-		path: "/d/status",
+		path: "/status",
 		sidebar: StatusPage
 	},
 	{
 		id: "feed",
 		exact: true,
-		path: "/d/feed",
+		path: "/feed",
 		sidebar: FeedPage
 	},
 	{
 		id: "myprofile",
 		exact: true,
-		path: "/d/myprofile",
+		path: "/myprofile",
 		sidebar: MyProfilePage
 	},
 	{
 		id: "sitegallery",
 		exact: true,
-		path: "/d/sitegallery",
+		path: "/sitegallery",
 		sidebar: SiteGalleryPage
 	},
 	{
 		id: "contact",
 		exact: true,
-		path: "/d/contact",
+		path: "/contact",
 		sidebar: ContactPage
 	}
 ];
@@ -133,13 +135,20 @@ class DashboardPage extends React.Component {
 												{routes.map(route => (
 													<Route
 														key={route.id}
-														path={route.path}
+														path={
+															this.props.match
+																.path +
+															route.path
+														}
 														exact={route.exact}
 														component={
 															route.sidebar
 														}
 													/>
 												))}
+												<Route
+													component={DefaultDashboard}
+												/>
 											</Switch>
 										</Segment>
 									</div>
@@ -170,11 +179,13 @@ class DashboardPage extends React.Component {
 													key={route.id}
 													path={route.path}
 													exact={route.exact}
-													component={route.sidebar}
+													component={route.component}
 												/>
 											))}
 											<Route
-												component={DefaultDashboard}
+												render={() => (
+													<DefaultDashboard />
+												)}
 											/>
 										</Switch>
 									</Segment>
@@ -190,8 +201,18 @@ class DashboardPage extends React.Component {
 
 DashboardPage.propTypes = {
 	history: PropTypes.shape({
-		push: PropTypes.func.isRequired
+		push: PropTypes.func.isRequired,
+		match: PropTypes.shape({
+			path: PropTypes.string.isRequired
+		}),
+		isConfirmend: PropTypes.bool.isRequired
 	}).isRequired
 };
 
-export default DashboardPage;
+function mapStateToProps(state) {
+	return {
+		isConfirmend: !!state.user
+	};
+}
+
+export default withRouter(connect(mapStateToProps)(DashboardPage));

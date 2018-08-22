@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-	BrowserRouter as Router,
+	HashRouter as Router,
 	Switch,
 	Route,
 	NavLink,
@@ -20,49 +20,49 @@ import GalleryPanel from "./GalleryPanel";
 const routes = [
 	{
 		id: BasicInfoPanel,
-		path: "/d/myprofile/basic",
+		path: "/basic",
 		exact: true,
 		component: BasicInfoPanel
 	},
 	{
 		id: SchoolInfoPanel,
-		path: "/d/myprofile/school",
+		path: "/school",
 		exact: true,
 		component: SchoolInfoPanel
 	},
 	{
 		id: AfterNavodayaPanel,
-		path: "/d/myprofile/afternavodaya",
+		path: "/afternavodaya",
 		exact: true,
 		component: AfterNavodayaPanel
 	},
 	{
 		id: SocialAccountsPanel,
-		path: "/d/myprofile/social",
+		path: "/social",
 		exact: true,
 		component: SocialAccountsPanel
 	},
 	{
 		id: FavouritesPanel,
-		path: "/d/myprofile/favorites",
+		path: "/favorites",
 		exact: true,
 		component: FavouritesPanel
 	},
 	{
 		id: FirstThingsPanel,
-		path: "/d/myprofile/firstthings",
+		path: "/firstthings",
 		exact: true,
 		component: FirstThingsPanel
 	},
 	{
 		id: ArticlesPanel,
-		path: "/d/myprofile/articles",
+		path: "/articles",
 		exact: true,
 		component: ArticlesPanel
 	},
 	{
 		id: GalleryPanel,
-		path: "/d/myprofile/gallery",
+		path: "/gallery",
 		exact: true,
 		component: GalleryPanel
 	}
@@ -196,7 +196,7 @@ class InfoPanels extends Component {
 								<Menu.Item
 									icon="info"
 									as={NavLink}
-									to="/d/myprofile/basic"
+									to="/basic"
 									name="BasicInfo"
 									active={activeItem === "BasicInfo"}
 									onClick={this.handleItemClick}
@@ -204,7 +204,7 @@ class InfoPanels extends Component {
 								<Menu.Item
 									icon="university"
 									as={NavLink}
-									to="/d/myprofile/school"
+									to="/school"
 									name="SchoolInfo"
 									active={activeItem === "SchoolInfo"}
 									onClick={this.handleItemClick}
@@ -212,7 +212,7 @@ class InfoPanels extends Component {
 								<Menu.Item
 									icon="wait"
 									as={NavLink}
-									to="/d/myprofile/afternavodaya"
+									to="/afternavodaya"
 									name="AfterNavodaya"
 									active={activeItem === "AfterNavodaya"}
 									onClick={this.handleItemClick}
@@ -220,7 +220,7 @@ class InfoPanels extends Component {
 								<Menu.Item
 									icon="at"
 									as={NavLink}
-									to="/d/myprofile/social"
+									to="/social"
 									name="SocialAccounts"
 									active={activeItem === "SocialAccounts"}
 									onClick={this.handleItemClick}
@@ -228,7 +228,7 @@ class InfoPanels extends Component {
 								<Menu.Item
 									icon="favorite"
 									as={NavLink}
-									to="/d/myprofile/favorites"
+									to="/favorites"
 									name="Favourites"
 									active={activeItem === "Favourites"}
 									onClick={this.handleItemClick}
@@ -236,7 +236,7 @@ class InfoPanels extends Component {
 								<Menu.Item
 									icon="first order"
 									as={NavLink}
-									to="/d/myprofile/firstthings"
+									to="/firstthings"
 									name="FirstThings"
 									active={activeItem === "FirstThings"}
 									onClick={this.handleItemClick}
@@ -247,7 +247,7 @@ class InfoPanels extends Component {
 									<Menu.Item
 										icon="list"
 										as={NavLink}
-										to="/d/myprofile/articles"
+										to="/articles"
 										name="Articles"
 										active={activeItem === "Articles"}
 										onClick={this.handleItemClick}
@@ -255,7 +255,7 @@ class InfoPanels extends Component {
 									<Menu.Item
 										icon="photo"
 										as={NavLink}
-										to="/d/myprofile/gallery"
+										to="/gallery"
 										name="Gallery"
 										active={activeItem === "Gallery"}
 										onClick={this.handleItemClick}
@@ -273,6 +273,7 @@ class InfoPanels extends Component {
 											component={route.component}
 										/>
 									))}
+									<Route component={BasicInfoPanel} />
 								</Switch>
 							</Segment>
 						</Segment>
@@ -293,13 +294,9 @@ class InfoPanels extends Component {
 						</Button.Group>
 						<div attached="bottom" style={{ marginTop: "5px" }}>
 							<Switch>
-								<Redirect
-									exact
-									from="/d/myprofile"
-									to="/d/myprofile/basic"
-								/>
+								<Redirect exact from="/" to="/basic" />
 								<Route
-									path="/d/myprofile/basic"
+									path="/basic"
 									component={BasicInfoPanel}
 								/>
 								{routes.map(route => (
@@ -310,6 +307,7 @@ class InfoPanels extends Component {
 										component={route.component}
 									/>
 								))}
+								<Route component={BasicInfoPanel} />
 							</Switch>
 						</div>
 					</Responsive>
