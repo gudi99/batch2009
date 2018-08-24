@@ -14,7 +14,7 @@ import GalleryPanel from "./GalleryPanel";
 const routes = [
 	{
 		id: BasicInfoPanel,
-		path: "/d/myprofile/basic",
+		path: "/myprofile/basic",
 		exact: true,
 		component: BasicInfoPanel,
 		key: "BasicInfo",
@@ -24,7 +24,7 @@ const routes = [
 	},
 	{
 		id: SchoolInfoPanel,
-		path: "/d/myprofile/school",
+		path: "/myprofile/school",
 		exact: true,
 		component: SchoolInfoPanel,
 		key: "SchoolInfo",
@@ -34,7 +34,7 @@ const routes = [
 	},
 	{
 		id: AfterNavodayaPanel,
-		path: "/d/myprofile/afternavodaya",
+		path: "/myprofile/afternavodaya",
 		exact: true,
 		component: AfterNavodayaPanel,
 		key: "AfterNavodaya",
@@ -44,7 +44,7 @@ const routes = [
 	},
 	{
 		id: SocialAccountsPanel,
-		path: "/d/myprofile/social",
+		path: "/myprofile/social",
 		exact: true,
 		component: SocialAccountsPanel,
 		key: "SocialAccounts",
@@ -54,7 +54,7 @@ const routes = [
 	},
 	{
 		id: FavouritesPanel,
-		path: "/d/myprofile/favorites",
+		path: "/myprofile/favorites",
 		exact: true,
 		component: FavouritesPanel,
 		key: "Favourites",
@@ -64,7 +64,7 @@ const routes = [
 	},
 	{
 		id: FirstThingsPanel,
-		path: "/d/myprofile/firstthings",
+		path: "/myprofile/firstthings",
 		exact: true,
 		component: FirstThingsPanel,
 		key: "FirstThings",
@@ -74,7 +74,7 @@ const routes = [
 	},
 	{
 		id: ArticlesPanel,
-		path: "/d/myprofile/articles",
+		path: "/myprofile/articles",
 		exact: true,
 		component: ArticlesPanel,
 		key: "Articles",
@@ -84,7 +84,7 @@ const routes = [
 	},
 	{
 		id: GalleryPanel,
-		path: "/d/myprofile/gallery",
+		path: "/myprofile/gallery",
 		exact: true,
 		component: GalleryPanel,
 		key: "Gallery",
@@ -284,20 +284,7 @@ class InfoPanels extends Component {
 						</Dropdown>
 					</Button.Group>
 					<div attached="bottom" style={{ marginTop: "5px" }}>
-						{/* <Switch>
-							<Redirect exact from="/" to="/basic" />
-							<Route path="/basic" component={BasicInfoPanel} />
-							{routes.map(route => (
-								<Route
-									key={route.id}
-									path={route.path}
-									exact={route.exact}
-									component={route.component}
-								/>
-							))}
-							<Route component={BasicInfoPanel} />
-						</Switch> */}
-						asasa
+						{this.returnSwitch(activeItem)}
 					</div>
 				</Responsive>
 			</div>

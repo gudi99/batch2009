@@ -1,5 +1,7 @@
 import React from "react";
-import { Table, Icon, Label, Responsive } from "semantic-ui-react";
+import { Table, Icon, Responsive } from "semantic-ui-react";
+
+import EditBasicInfo from "../modals/EditBasicInfo";
 
 class BasicInfoPanel extends React.Component {
 	state = {};
@@ -12,17 +14,11 @@ class BasicInfoPanel extends React.Component {
 					// If he come to this page from status cards, then this should not display
 					<div>
 						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<Label attached="top right" as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditBasicInfo mode="computer" />
 						</Responsive>
 
 						<Responsive {...Responsive.onlyMobile}>
-							<Label as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditBasicInfo mode="mobile" />
 						</Responsive>
 					</div>
 				}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 
 class EditStatusForm extends React.Component {
 	state = {};
@@ -7,6 +7,9 @@ class EditStatusForm extends React.Component {
 	render() {
 		return (
 			<Form>
+				<p
+					style={{ color: "blue" }}
+				>{`Click outside this form to close instead.`}</p>
 				<Form.TextArea
 					placeholder="Enter Current Status"
 					name="CurrentStatus"
@@ -14,15 +17,6 @@ class EditStatusForm extends React.Component {
 					// value={data.message}
 					// onChange={this.onChange}
 					// error={!!errors.message}
-				/>
-				<Button
-					positive
-					icon="checkmark"
-					labelPosition="left"
-					content="Update"
-					onClick={this.close}
-					floated="right"
-					style={{ marginBottom: "15px" }}
 				/>
 			</Form>
 		);

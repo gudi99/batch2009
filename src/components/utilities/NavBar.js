@@ -82,7 +82,7 @@ class NavBar extends React.Component {
 							<Button.Group floated="right">
 								<Button
 									icon="dashboard"
-									to="/d/dashboard"
+									to="/dashboard"
 									as={NavLink}
 									color="blue"
 									size="tiny"
