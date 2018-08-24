@@ -52,7 +52,7 @@ class SideBar extends React.Component {
 				<Segment raised size="big">
 					<Menu.Item
 						as={NavLink}
-						to="/d/announcements"
+						to="/announcements"
 						name="announcements"
 						active={activeItem === "announcements"}
 						onClick={this.props.handleItemClick}
@@ -72,7 +72,7 @@ class SideBar extends React.Component {
 					<Menu.Item
 						name="status"
 						as={NavLink}
-						to="/d/status"
+						to="/status"
 						active={activeItem === "status"}
 						onClick={this.props.handleItemClick}
 					>
@@ -83,7 +83,7 @@ class SideBar extends React.Component {
 					<Menu.Item
 						name="feed"
 						as={NavLink}
-						to="/d/feed"
+						to="/feed"
 						active={activeItem === "feed"}
 						onClick={this.props.handleItemClick}
 					>
@@ -99,7 +99,7 @@ class SideBar extends React.Component {
 				<Menu.Item
 					name="myprofile"
 					as={NavLink}
-					to="/d/myprofile"
+					to="/myprofile"
 					active={activeItem === "myprofile"}
 					onClick={this.props.handleItemClick}
 				>
@@ -109,7 +109,7 @@ class SideBar extends React.Component {
 				<Menu.Item
 					name="sitegallery"
 					as={NavLink}
-					to="/d/sitegallery"
+					to="/sitegallery"
 					active={activeItem === "sitegallery"}
 					onClick={this.props.handleItemClick}
 				>
@@ -119,7 +119,7 @@ class SideBar extends React.Component {
 				<Menu.Item
 					name="contact"
 					as={NavLink}
-					to="/d/contact"
+					to="/contact"
 					active={activeItem === "contact"}
 					onClick={this.props.handleItemClick}
 				>

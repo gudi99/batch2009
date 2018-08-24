@@ -1,16 +1,14 @@
 import React from "react";
-import _ from "lodash";
-import faker from "faker";
 import {
 	Header,
 	Grid,
 	Dropdown,
-	Search,
 	Card,
 	Icon,
 	Image,
 	Button
 } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import gImg from "../images/my pic.jpg";
 
 const users = [
@@ -129,13 +127,6 @@ const users = [
 	}
 ];
 
-const source = _.times(5, () => ({
-	title: faker.company.companyName(),
-	description: faker.company.catchPhrase(),
-	image: faker.internet.avatar(),
-	price: faker.finance.amount(0, 100, 2, "$")
-}));
-
 class StatusPage extends React.Component {
 	componentWillMount() {
 		this.resetComponent();
@@ -144,29 +135,7 @@ class StatusPage extends React.Component {
 	resetComponent = () =>
 		this.setState({ isLoading: false, results: [], value: "" });
 
-	handleResultSelect = (e, { result }) =>
-		this.setState({ value: result.title });
-
-	handleSearchChange = (e, { value }) => {
-		this.setState({ isLoading: true, value });
-
-		setTimeout(() => {
-			if (this.state.value.length < 1) return this.resetComponent();
-
-			const re = new RegExp(_.escapeRegExp(this.state.value), "i");
-			const isMatch = result => re.test(result.title);
-
-			this.setState({
-				isLoading: false,
-				results: _.filter(source, isMatch)
-			});
-			return null;
-		}, 300);
-	};
-
 	render() {
-		const { isLoading, value, results } = this.state;
-
 		return (
 			<Grid
 				centered
@@ -182,20 +151,6 @@ class StatusPage extends React.Component {
 					<Header as="h1" content="Status Page" color="teal" />
 				</Grid.Row>
 				<Grid.Row>
-					{/* <Grid.Column width={8}>
-						<Search
-							loading={isLoading}
-							onResultSelect={this.handleResultSelect}
-							onSearchChange={_.debounce(
-								this.handleSearchChange,
-								500,
-								{ leading: true }
-							)}
-							results={results}
-							value={value}
-							{...this.props}
-						/>
-					</Grid.Column> */}
 					<Grid.Column width={2}>
 						<Dropdown
 							text="Filter"
@@ -227,7 +182,8 @@ class StatusPage extends React.Component {
 									marginTop: "10px",
 									marginBottom: "10px"
 								}}
-								as="a"
+								as={Link}
+								to="/myprofile#"
 							>
 								<Card.Content>
 									<Image

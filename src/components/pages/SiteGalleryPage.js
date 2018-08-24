@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, Header, Card } from "semantic-ui-react";
-// import Gallery from "react-photo-gallery";
 import Lightbox from "react-images";
 import _1 from "../images/pics/2.jpg";
 import _2 from "../images/pics/1.jpg";

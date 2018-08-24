@@ -1,37 +1,64 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-// import PropTypes from "prop-types";
 import WelcomePage from "./components/pages/WelcomePage";
 import DashboardPage from "./components/pages/DashboardPage";
 import Page404 from "./components/pages/Page404";
 
-const routes = [
+const subroutes = [
 	{
-		id: WelcomePage,
-		path: "/",
+		id: "dashboard",
 		exact: true,
-		component: WelcomePage
+		strict: true,
+		path: "/dashboard"
 	},
 	{
-		id: DashboardPage,
-		path: "/d",
-		component: DashboardPage
+		id: "announcements",
+		exact: true,
+		strict: true,
+		path: "/announcements"
 	},
 	{
-		id: Page404,
-		component: Page404
+		id: "status",
+		exact: true,
+		strict: true,
+		path: "/status"
+	},
+	{
+		id: "feed",
+		exact: true,
+		strict: true,
+		path: "/feed"
+	},
+	{
+		id: "myprofile",
+		exact: true,
+		path: "/myprofile"
+	},
+	{
+		id: "sitegallery",
+		exact: true,
+		strict: true,
+		path: "/sitegallery"
+	},
+	{
+		id: "contact",
+		exact: true,
+		strict: true,
+		path: "/contact"
 	}
 ];
 
 const App = () => (
 	<div>
 		<Switch>
-			{routes.map(route => (
+			<Route path="/" exact component={WelcomePage} />
+			{subroutes.map(route => (
 				<Route
 					key={route.id}
 					path={route.path}
 					exact={route.exact}
-					component={route.component}
+					strict={route.strict}
+					component={() => <DashboardPage subcomponent={route.id} />}
 				/>
 			))}
 			<Route component={Page404} />

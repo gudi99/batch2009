@@ -1,10 +1,5 @@
 import React from "react";
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	withRouter
-} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Sidebar, Segment, Responsive } from "semantic-ui-react";
@@ -20,53 +15,12 @@ import SiteGalleryPage from "./SiteGalleryPage";
 import ContactPage from "./ContactPage";
 import DefaultDashboard from "./DefaultDashboard";
 
-const routes = [
-	{
-		id: "dashboard",
-		exact: true,
-		path: "/dashboard",
-		sidebar: DefaultDashboard
-	},
-	{
-		id: "announcements",
-		exact: true,
-		path: "/announcements",
-		sidebar: AnnouncementsPage
-	},
-	{
-		id: "status",
-		exact: true,
-		path: "/status",
-		sidebar: StatusPage
-	},
-	{
-		id: "feed",
-		exact: true,
-		path: "/feed",
-		sidebar: FeedPage
-	},
-	{
-		id: "myprofile",
-		exact: true,
-		path: "/myprofile",
-		sidebar: MyProfilePage
-	},
-	{
-		id: "sitegallery",
-		exact: true,
-		path: "/sitegallery",
-		sidebar: SiteGalleryPage
-	},
-	{
-		id: "contact",
-		exact: true,
-		path: "/contact",
-		sidebar: ContactPage
-	}
-];
-
 class DashboardPage extends React.Component {
-	state = { activeItem: "", visible: false };
+	constructor(props) {
+		super(props);
+
+		this.state = { activeItem: this.props.subcomponent, visible: false };
+	}
 
 	handleItemClick = (e, { name }) => {
 		this.setState({
@@ -93,120 +47,130 @@ class DashboardPage extends React.Component {
 		});
 	};
 
+	returnSwitch = param => {
+		switch (param) {
+			case "announcements":
+				return [
+					<div key={this.state.activeItem}>
+						<AnnouncementsPage />
+					</div>
+				];
+			case "status":
+				return [
+					<div key={this.state.activeItem}>
+						<StatusPage />
+					</div>
+				];
+			case "feed":
+				return [
+					<div key={this.state.activeItem}>
+						<FeedPage />
+					</div>
+				];
+			case "myprofile":
+				return [
+					<div key={this.state.activeItem}>
+						<MyProfilePage />
+					</div>
+				];
+			case "sitegallery":
+				return [
+					<div key={this.state.activeItem}>
+						<SiteGalleryPage />
+					</div>
+				];
+			case "contact":
+				return [
+					<div key={this.state.activeItem}>
+						<ContactPage />
+					</div>
+				];
+			case "dashboard":
+				return [
+					<div key={this.state.activeItem}>
+						<DefaultDashboard />
+					</div>
+				];
+			default:
+				return [
+					<div key={this.state.activeItem}>
+						<DefaultDashboard />
+					</div>
+				];
+		}
+	};
+
 	render() {
 		const { activeItem } = this.state || {};
 		const { visible } = this.state;
 
 		return (
-			<Router>
-				<div>
-					<Sidebar.Pushable as={Segment}>
-						<SideBar
-							visible={visible}
-							activeItem={activeItem}
-							handleSideBarHide={this.handleSideBarHide}
-							handleItemClick={this.handleItemClick}
-						/>
+			<div>
+				<Sidebar.Pushable as={Segment}>
+					<SideBar
+						visible={visible}
+						activeItem={activeItem}
+						handleSideBarHide={this.handleSideBarHide}
+						handleItemClick={this.handleItemClick}
+					/>
 
-						<Sidebar.Pusher>
-							<Segment basic>
-								<Responsive
-									minWidth={Responsive.onlyTablet.minWidth}
-								>
-									<NavBar
-										activeItem={activeItem}
-										handleButtonClick={
-											this.handleButtonClick
-										}
-										mode="computer"
-										toDashboard={this.toDashboard}
-									/>
+					<Sidebar.Pusher>
+						<Segment basic>
+							<Responsive
+								minWidth={Responsive.onlyTablet.minWidth}
+							>
+								<NavBar
+									activeItem={activeItem}
+									handleButtonClick={this.handleButtonClick}
+									mode="computer"
+									toDashboard={this.toDashboard}
+								/>
 
-									{/* Page Content */}
-									<div>
-										<Segment
-											style={{
-												marginTop: "10px",
-												minHeight: window.innerHeight
-											}}
-										>
-											<Switch>
-												{routes.map(route => (
-													<Route
-														key={route.id}
-														path={
-															this.props.match
-																.path +
-															route.path
-														}
-														exact={route.exact}
-														component={
-															route.sidebar
-														}
-													/>
-												))}
-												<Route
-													component={DefaultDashboard}
-												/>
-											</Switch>
-										</Segment>
-									</div>
-								</Responsive>
-
-								<Responsive {...Responsive.onlyMobile}>
-									<NavBar
-										activeItem={activeItem}
-										handleButtonClick={
-											this.handleButtonClick
-										}
-										mode="mobile"
-										toDashboard={this.toDashboard}
-									/>
-
-									{/* Page Content */}
+								{/* Page Content */}
+								<div>
 									<Segment
 										style={{
 											marginTop: "10px",
-											marginLeft: "-10px",
-											marginRight: "-10px",
-											marginBottom: "-10px"
+											minHeight: window.innerHeight
 										}}
 									>
-										<Switch>
-											{routes.map(route => (
-												<Route
-													key={route.id}
-													path={
-														this.props.match.path +
-														route.path
-													}
-													exact={route.exact}
-													component={route.sidebar}
-												/>
-											))}
-											<Route
-												component={DefaultDashboard}
-											/>
-										</Switch>
+										{this.returnSwitch(
+											this.state.activeItem
+										)}
 									</Segment>
-								</Responsive>
-							</Segment>
-						</Sidebar.Pusher>
-					</Sidebar.Pushable>
-				</div>
-			</Router>
+								</div>
+							</Responsive>
+
+							<Responsive {...Responsive.onlyMobile}>
+								<NavBar
+									activeItem={activeItem}
+									handleButtonClick={this.handleButtonClick}
+									mode="mobile"
+									toDashboard={this.toDashboard}
+								/>
+
+								{/* Page Content */}
+								<Segment
+									style={{
+										marginTop: "10px",
+										marginLeft: "-10px",
+										marginRight: "-10px",
+										marginBottom: "-10px"
+									}}
+								>
+									{this.returnSwitch(this.state.activeItem)}
+								</Segment>
+							</Responsive>
+						</Segment>
+					</Sidebar.Pusher>
+				</Sidebar.Pushable>
+			</div>
 		);
 	}
 }
 
 DashboardPage.propTypes = {
-	history: PropTypes.shape({
-		push: PropTypes.func.isRequired,
-		match: PropTypes.shape({
-			path: PropTypes.string.isRequired
-		}),
-		isConfirmend: PropTypes.bool
-	}).isRequired
+	subcomponent: PropTypes.string.isRequired
 };
 
 function mapStateToProps(state) {

@@ -27,10 +27,11 @@ class NavBar extends React.Component {
 						activeItem === "status" ||
 						activeItem === "feed" ||
 						activeItem === "contact" ||
+						activeItem === "myprofile" ||
 						activeItem === "sitegallery" ? (
 							<Button.Group floated="right" size="tiny">
 								<Button
-									to="/d/dashboard"
+									to="/dashboard"
 									as={NavLink}
 									icon
 									labelPosition="right"
@@ -76,6 +77,7 @@ class NavBar extends React.Component {
 						activeItem === "status" ||
 						activeItem === "feed" ||
 						activeItem === "contact" ||
+						activeItem === "myprofile" ||
 						activeItem === "sitegallery" ? (
 							<Button.Group floated="right">
 								<Button
