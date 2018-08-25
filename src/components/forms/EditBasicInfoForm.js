@@ -37,7 +37,7 @@ class EditBasicInfoForm extends Component {
 		];
 
 		return (
-			<Form color="teal">
+			<Form>
 				<p
 					style={{ color: "blue" }}
 				>{`Click outside this form to close instead.`}</p>

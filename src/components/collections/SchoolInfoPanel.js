@@ -1,6 +1,8 @@
 import React from "react";
 import { Table, Icon, Label, Responsive } from "semantic-ui-react";
 
+import EditSchoolInfo from "../modals/EditSchoolInfo";
+
 class SchoolInfoPanel extends React.Component {
 	state = {};
 
@@ -12,17 +14,11 @@ class SchoolInfoPanel extends React.Component {
 					// If he come to this page from status cards, then this should not display
 					<div>
 						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<Label attached="top right" as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditSchoolInfo mode="computer" />
 						</Responsive>
 
 						<Responsive {...Responsive.onlyMobile}>
-							<Label as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditSchoolInfo mode="mobile" />
 						</Responsive>
 					</div>
 				}
