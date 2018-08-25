@@ -8,6 +8,7 @@ class EditStatus extends React.Component {
 	render() {
 		return (
 			<Modal
+				size="small"
 				trigger={
 					<Label attached="top right" as="a">
 						<Icon name="edit" />

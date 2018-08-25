@@ -44,14 +44,22 @@ class EditFirstThings extends Component {
 				)}
 				{mode === "mobile" && (
 					<Modal
+						size="small"
 						trigger={
 							<Label as="a">
 								<Icon name="edit" />
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit FirstThings Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="first order" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit First Things
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditFirstThingsForm />

@@ -14,6 +14,7 @@ class EditSchoolInfo extends Component {
 			<div>
 				{mode === "computer" && (
 					<Modal
+						size="small"
 						trigger={
 							<Label attached="top right" as="a">
 								<Icon name="edit" />
@@ -43,14 +44,22 @@ class EditSchoolInfo extends Component {
 				)}
 				{mode === "mobile" && (
 					<Modal
+						size="small"
 						trigger={
 							<Label as="a">
 								<Icon name="edit" />
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit School Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="university" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit School Info
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditSchoolInfoForm />

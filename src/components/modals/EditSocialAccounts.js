@@ -44,14 +44,22 @@ class EditSocialAccounts extends Component {
 				)}
 				{mode === "mobile" && (
 					<Modal
+						size="small"
 						trigger={
 							<Label as="a">
 								<Icon name="edit" />
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit Social Accounts Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="at" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit Social Accounts
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditSocialAccountsForm />

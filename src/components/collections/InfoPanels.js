@@ -78,7 +78,7 @@ const routes = [
 		exact: true,
 		component: ArticlesPanel,
 		key: "Articles",
-		icon: "list",
+		icon: "newspaper",
 		text: "Articles",
 		value: "Articles"
 	},
@@ -233,7 +233,7 @@ class InfoPanels extends Component {
 							{/* Menu right side */}
 							<Menu.Menu position="right">
 								<Menu.Item
-									icon="list"
+									icon="newspaper"
 									as={NavLink}
 									to="/myprofile/articles"
 									name="Articles"

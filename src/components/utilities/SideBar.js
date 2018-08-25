@@ -103,7 +103,7 @@ class SideBar extends React.Component {
 					active={activeItem === "myprofile"}
 					onClick={this.props.handleItemClick}
 				>
-					<Icon name="dashboard" />
+					<Icon name="user circle outline" />
 					MyProfile
 				</Menu.Item>
 				<Menu.Item

@@ -44,14 +44,22 @@ class EditFavourites extends Component {
 				)}
 				{mode === "mobile" && (
 					<Modal
+						size="small"
 						trigger={
 							<Label as="a">
 								<Icon name="edit" />
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit Favourites Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="favorite" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit Favourites
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditFavouritesForm />
