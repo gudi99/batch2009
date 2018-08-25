@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Label, Icon, Button } from "semantic-ui-react";
+import { Modal, Label, Icon, Button, Header } from "semantic-ui-react";
 import EditStatusForm from "../forms/EditStatusForm";
 
 class EditStatus extends React.Component {
@@ -14,8 +14,15 @@ class EditStatus extends React.Component {
 						Edit
 					</Label>
 				}
+				closeIcon
 			>
-				<Modal.Header>Edit Status</Modal.Header>
+				<Header>
+					<Icon.Group size="large">
+						<Icon name="bullseye" />
+						<Icon corner name="edit" />
+					</Icon.Group>{" "}
+					Edit Status
+				</Header>
 				<Modal.Content>
 					<Modal.Description>
 						<EditStatusForm />

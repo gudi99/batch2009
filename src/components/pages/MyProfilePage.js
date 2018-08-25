@@ -106,7 +106,10 @@ class MyProfilePage extends React.Component {
 									/>
 								</Segment>
 								<Segment.Group horizontal>
-									<Segment as="h5">Current Status</Segment>
+									<Segment as="h5">
+										<Icon name="bullseye" />
+										Current Status
+									</Segment>
 									<Segment>
 										Studying B.Tech CSE at Lovely
 										Professional University

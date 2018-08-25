@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Modal, Label, Icon, Button } from "semantic-ui-react";
+import { Modal, Label, Icon, Button, Header } from "semantic-ui-react";
 
 import EditSchoolInfoForm from "../forms/EditSchoolInfoForm";
 
@@ -20,8 +20,15 @@ class EditSchoolInfo extends Component {
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit School Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="university" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit School Info
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditSchoolInfoForm />

@@ -25,7 +25,7 @@ class EditFavouritesForm extends Component {
 					style={{ color: "blue" }}
 				>{`Click outside this form to close instead.`}</p>
 				{favouriteslist.map(favItem => (
-					<Form.Input label={`Fav. ${favItem}`} />
+					<Form.Input key={favItem} label={`Fav. ${favItem}`} />
 				))}
 			</Form>
 		);

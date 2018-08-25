@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Modal, Label, Icon, Button } from "semantic-ui-react";
+import { Modal, Label, Icon, Button, Header } from "semantic-ui-react";
 
 import EditSocialAccountsForm from "../forms/EditSocialAccountsForm";
 
@@ -21,8 +21,15 @@ class EditSocialAccounts extends Component {
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit Social Accounts Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="at" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit Social Accounts
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditSocialAccountsForm />

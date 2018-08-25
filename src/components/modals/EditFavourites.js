@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Modal, Label, Icon, Button } from "semantic-ui-react";
+import { Modal, Label, Icon, Button, Header } from "semantic-ui-react";
 
 import EditFavouritesForm from "../forms/EditFavouritesForm";
 
@@ -21,8 +21,15 @@ class EditFavourites extends Component {
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit Favourites Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="favorite" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit Favourites
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditFavouritesForm />

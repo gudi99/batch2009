@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Modal, Label, Icon, Button } from "semantic-ui-react";
+import { Modal, Label, Icon, Button, Header } from "semantic-ui-react";
 
 import EditBasicInfoForm from "../forms/EditBasicInfoForm";
 
@@ -20,8 +20,15 @@ class EditBasicInfo extends Component {
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit Basic Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="info" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit Basic Info
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditBasicInfoForm />

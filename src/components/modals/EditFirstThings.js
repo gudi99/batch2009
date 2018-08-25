@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Modal, Label, Icon, Button } from "semantic-ui-react";
+import { Modal, Label, Icon, Button, Header } from "semantic-ui-react";
 
 import EditFirstThingsForm from "../forms/EditFirstThingsForm";
 
@@ -21,8 +21,15 @@ class EditFirstThings extends Component {
 								Edit
 							</Label>
 						}
+						closeIcon
 					>
-						<Modal.Header>Edit FirstThings Info</Modal.Header>
+						<Header>
+							<Icon.Group size="large">
+								<Icon name="first order" />
+								<Icon corner name="edit" />
+							</Icon.Group>{" "}
+							Edit First Things
+						</Header>
 						<Modal.Content>
 							<Modal.Description>
 								<EditFirstThingsForm />
