@@ -1,12 +1,7 @@
 import React from "react";
-import {
-	Table,
-	Button,
-	Responsive,
-	Divider,
-	Label,
-	Icon
-} from "semantic-ui-react";
+import { Table, Button, Responsive, Divider } from "semantic-ui-react";
+
+import EditSocialAccounts from "../modals/EditSocialAccounts";
 
 class SocialAccountsPanel extends React.Component {
 	state = {};
@@ -15,14 +10,7 @@ class SocialAccountsPanel extends React.Component {
 		return (
 			<div>
 				<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-					{
-						// This should appear if user is viewing his profile in My profile time only.
-						// If he come to this page from status cards, then this should not display
-						<Label attached="top right" as="a">
-							<Icon name="edit" />
-							Edit
-						</Label>
-					}
+					<EditSocialAccounts mode="computer" />
 					<Table striped>
 						<Table.Body>
 							<Table.Row>
@@ -142,14 +130,7 @@ class SocialAccountsPanel extends React.Component {
 				</Responsive>
 
 				<Responsive {...Responsive.onlyMobile}>
-					{
-						// This should appear if user is viewing his profile in My profile time only.
-						// If he come to this page from status cards, then this should not display
-						<Label as="a">
-							<Icon name="edit" />
-							Edit
-						</Label>
-					}
+					<EditSocialAccounts mode="mobile" />
 					<Divider />
 					<Button circular color="facebook" icon="facebook" />
 					<a

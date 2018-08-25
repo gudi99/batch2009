@@ -49,6 +49,7 @@ class EditSchoolInfoForm extends Component {
 				</Form.Group>
 				<Form.Group widths="equal">
 					<Form.Input label="Game or Sport" control="select">
+						<option value="None">None</option>
 						<option value="Volleyball">Volleyball</option>
 						<option value="Kabaddi">Kabaddi</option>
 						<option value="Kho Kho">Kho Kho</option>
@@ -59,6 +60,7 @@ class EditSchoolInfoForm extends Component {
 						<option value="Yoga">Yoga</option>
 					</Form.Input>
 					<Form.Input label="Level Reached" control="select">
+						<option value="None">None</option>
 						<option value="Clusters">Clusters</option>
 						<option value="Regionals">Regionals</option>
 						<option value="Nationals">Nationals</option>

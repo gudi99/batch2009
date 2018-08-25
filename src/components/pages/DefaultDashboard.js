@@ -23,11 +23,10 @@ class DefaultDashboard extends React.Component {
 					<Grid.Column>
 						<Card
 							as={NavLink}
-							to="/myprofile/school"
+							to="/myprofile"
 							color="teal"
-							header="My Schoolinfp"
+							header="My Profile"
 							description="Visit My Dashboard"
-							href="#"
 						/>
 					</Grid.Column>
 					<Grid.Column>

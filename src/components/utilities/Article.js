@@ -19,22 +19,22 @@ class Article extends React.Component {
 					<Header>
 						<Image avatar src={BImg} /> Saka Sai Trinath
 						<Header floated="right" as="h4">
-							<Dropdown
-								options={[
-									{
-										key: "Edit",
-										icon: "pencil",
-										text: "Edit",
-										value: "Edit"
-									},
-									{
-										key: "Delete",
-										icon: "trash alternate",
-										text: "Delete",
-										value: "Delete"
-									}
-								]}
-							/>
+							<Dropdown className="icon">
+								<Dropdown.Menu>
+									<Dropdown.Item
+										key="Edit"
+										icon="pencil"
+										text="Edit"
+										value="Edit"
+									/>
+									<Dropdown.Item
+										key="Delete"
+										icon="trash alternate"
+										text="Delete"
+										value="Delete"
+									/>
+								</Dropdown.Menu>
+							</Dropdown>
 						</Header>
 					</Header>
 				</Segment>

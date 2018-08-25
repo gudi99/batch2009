@@ -1,5 +1,7 @@
 import React from "react";
-import { Table, Icon, Label, Responsive } from "semantic-ui-react";
+import { Table, Icon, Responsive } from "semantic-ui-react";
+
+import EditFirstThings from "../modals/EditFirstThings";
 
 class FirstThingsPanel extends React.Component {
 	state = {};
@@ -12,17 +14,11 @@ class FirstThingsPanel extends React.Component {
 					// If he come to this page from status cards, then this should not display
 					<div>
 						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<Label attached="top right" as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditFirstThings mode="computer" />
 						</Responsive>
 
 						<Responsive {...Responsive.onlyMobile}>
-							<Label as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditFirstThings mode="mobile" />
 						</Responsive>
 					</div>
 				}

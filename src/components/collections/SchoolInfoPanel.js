@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Icon, Label, Responsive } from "semantic-ui-react";
+import { Table, Icon, Responsive } from "semantic-ui-react";
 
 import EditSchoolInfo from "../modals/EditSchoolInfo";
 

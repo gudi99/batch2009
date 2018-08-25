@@ -1,5 +1,7 @@
 import React from "react";
-import { Segment, Icon, Label, Responsive } from "semantic-ui-react";
+import { Segment, Icon, Responsive } from "semantic-ui-react";
+
+import EditFavourites from "../modals/EditFavourites";
 
 class FavouritesPanel extends React.Component {
 	state = {};
@@ -12,17 +14,11 @@ class FavouritesPanel extends React.Component {
 					// If he come to this page from status cards, then this should not display
 					<div>
 						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<Label attached="top right" as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditFavourites mode="computer" />
 						</Responsive>
 
 						<Responsive {...Responsive.onlyMobile}>
-							<Label as="a">
-								<Icon name="edit" />
-								Edit
-							</Label>
+							<EditFavourites mode="mobile" />
 						</Responsive>
 					</div>
 				}
