@@ -18,6 +18,8 @@ import profileDummyPic from "../images/my pic.jpg";
 import InfoPanels from "../collections/InfoPanels";
 import EditStatus from "../modals/EditStatus";
 
+import WriteArticle from "../modals/WriteArticle";
+
 const subroutes = [
 	{
 		id: "default",
@@ -146,19 +148,7 @@ class MyProfilePage extends React.Component {
 					<Grid.Row centered>
 						<Grid.Column width={6}>
 							<Button.Group widths="2">
-								<Button
-									animated="fade"
-									size="big"
-									color="teal"
-									basic
-								>
-									<Button.Content visible>
-										Write Article
-									</Button.Content>
-									<Button.Content hidden>
-										<Icon name="pencil" />
-									</Button.Content>
-								</Button>
+								<WriteArticle />
 
 								<Button
 									animated="fade"
