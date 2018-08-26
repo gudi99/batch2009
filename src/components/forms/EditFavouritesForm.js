@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Form } from "semantic-ui-react";
 
+import AddNewFieldInForm from "../modals/AddNewFieldInForm";
+
 class EditFavouritesForm extends Component {
 	state = {};
 
@@ -24,6 +26,7 @@ class EditFavouritesForm extends Component {
 				{favouriteslist.map(favItem => (
 					<Form.Input key={favItem} label={`Fav. ${favItem}`} />
 				))}
+				<AddNewFieldInForm />
 			</Form>
 		);
 	}

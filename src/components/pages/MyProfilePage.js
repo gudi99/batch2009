@@ -103,8 +103,7 @@ class MyProfilePage extends React.Component {
 								}
 							</Segment>
 						</Grid.Column>
-						{/* </Grid.Row>
-				<Grid.Row centered columns={2}> */}
+
 						<Grid.Column width={8}>
 							<Segment.Group>
 								<Segment color="teal" textAlign="center">
@@ -145,35 +144,36 @@ class MyProfilePage extends React.Component {
 
 					{/* It should be displayed only for the own user. Not to the other */}
 					<Grid.Row centered>
-						<Grid.Column width={3}>
-							<Button
-								animated="fade"
-								size="big"
-								color="teal"
-								basic
-							>
-								<Button.Content visible>
-									Write Article
-								</Button.Content>
-								<Button.Content hidden>
-									<Icon name="pencil" />
-								</Button.Content>
-							</Button>
-						</Grid.Column>
-						<Grid.Column width={3}>
-							<Button
-								animated="fade"
-								size="big"
-								color="teal"
-								basic
-							>
-								<Button.Content visible>
-									Upload to Gallery
-								</Button.Content>
-								<Button.Content hidden>
-									<Icon name="photo" />
-								</Button.Content>
-							</Button>
+						<Grid.Column width={6}>
+							<Button.Group widths="2">
+								<Button
+									animated="fade"
+									size="big"
+									color="teal"
+									basic
+								>
+									<Button.Content visible>
+										Write Article
+									</Button.Content>
+									<Button.Content hidden>
+										<Icon name="pencil" />
+									</Button.Content>
+								</Button>
+
+								<Button
+									animated="fade"
+									size="big"
+									color="teal"
+									basic
+								>
+									<Button.Content visible>
+										Upload to Gallery
+									</Button.Content>
+									<Button.Content hidden>
+										<Icon name="photo" />
+									</Button.Content>
+								</Button>
+							</Button.Group>
 						</Grid.Column>
 					</Grid.Row>
 
