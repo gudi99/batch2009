@@ -20,9 +20,6 @@ class EditFavouritesForm extends Component {
 
 		return (
 			<Form>
-				<p
-					style={{ color: "blue" }}
-				>{`Click outside this form to close instead.`}</p>
 				{firstthingslist.map(firstItem => (
 					<Form.Input key={firstItem} label={firstItem} />
 				))}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Icon, Responsive } from "semantic-ui-react";
+import { Segment, Icon } from "semantic-ui-react";
 
 import EditFavourites from "../modals/EditFavourites";
 
@@ -12,15 +12,8 @@ class FavouritesPanel extends React.Component {
 				{
 					// This should appear if user is viewing his profile in My profile time only.
 					// If he come to this page from status cards, then this should not display
-					<div>
-						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<EditFavourites mode="computer" />
-						</Responsive>
 
-						<Responsive {...Responsive.onlyMobile}>
-							<EditFavourites mode="mobile" />
-						</Responsive>
-					</div>
+					<EditFavourites />
 				}
 				<Segment.Group>
 					<Segment.Group horizontal>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Icon, Responsive } from "semantic-ui-react";
+import { Table, Icon } from "semantic-ui-react";
 
 import EditBasicInfo from "../modals/EditBasicInfo";
 
@@ -12,15 +12,7 @@ class BasicInfoPanel extends React.Component {
 				{
 					// This should appear if user is viewing his profile in My profile time only.
 					// If he come to this page from status cards, then this should not display
-					<div>
-						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<EditBasicInfo mode="computer" />
-						</Responsive>
-
-						<Responsive {...Responsive.onlyMobile}>
-							<EditBasicInfo mode="mobile" />
-						</Responsive>
-					</div>
+					<EditBasicInfo />
 				}
 				<Table celled striped>
 					<Table.Body>

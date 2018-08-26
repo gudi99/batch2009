@@ -8,9 +8,9 @@ import {
 	Container
 } from "semantic-ui-react";
 
-import EditSchoolInfoForm from "../forms/EditSchoolInfoForm";
+import EditGamesForm from "../forms/EditGamesForm";
 
-class EditSchoolInfo extends Component {
+class EditGames extends Component {
 	state = {};
 
 	render() {
@@ -21,8 +21,8 @@ class EditSchoolInfo extends Component {
 					trigger={
 						<Container fluid textAlign="right">
 							<Label as="a">
-								<Icon name="edit" />
-								Edit
+								<Icon name="pencil" />
+								Add new
 							</Label>
 						</Container>
 					}
@@ -30,14 +30,14 @@ class EditSchoolInfo extends Component {
 				>
 					<Header>
 						<Icon.Group size="large">
-							<Icon name="university" />
+							<Icon name="game" />
 							<Icon corner name="edit" />
 						</Icon.Group>{" "}
-						Edit School Info
+						Add new Games Info
 					</Header>
 					<Modal.Content>
 						<Modal.Description>
-							<EditSchoolInfoForm />
+							<EditGamesForm />
 						</Modal.Description>
 					</Modal.Content>
 					<Modal.Actions>
@@ -51,4 +51,4 @@ class EditSchoolInfo extends Component {
 	}
 }
 
-export default EditSchoolInfo;
+export default EditGames;

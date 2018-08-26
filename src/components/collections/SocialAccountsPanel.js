@@ -10,7 +10,7 @@ class SocialAccountsPanel extends React.Component {
 		return (
 			<div>
 				<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-					<EditSocialAccounts mode="computer" />
+					<EditSocialAccounts />
 					<Table striped>
 						<Table.Body>
 							<Table.Row>
@@ -130,7 +130,7 @@ class SocialAccountsPanel extends React.Component {
 				</Responsive>
 
 				<Responsive {...Responsive.onlyMobile}>
-					<EditSocialAccounts mode="mobile" />
+					<EditSocialAccounts />
 					<Divider />
 					<Button circular color="facebook" icon="facebook" />
 					<a

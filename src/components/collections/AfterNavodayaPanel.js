@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Label, Icon, Responsive } from "semantic-ui-react";
+import { Card, Label, Icon, Container } from "semantic-ui-react";
 
 class AfterNavodayaPanel extends React.Component {
 	state = {};
@@ -11,19 +11,12 @@ class AfterNavodayaPanel extends React.Component {
 					// This should appear if user is viewing his profile in My profile time only.
 					// If he come to this page from status cards, then this should not display
 					<div>
-						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<Label attached="top right" as="a">
+						<Container fluid textAlign="right">
+							<Label as="a">
 								<Icon name="edit" />
 								Edit
 							</Label>
-						</Responsive>
-
-						<Responsive {...Responsive.onlyMobile}>
-							<Label as="a" style={{ marginBottom: "10px" }}>
-								<Icon name="edit" />
-								Edit
-							</Label>
-						</Responsive>
+						</Container>
 					</div>
 				}
 				<Card.Group centered>

@@ -7,9 +7,6 @@ class EditStatusForm extends React.Component {
 	render() {
 		return (
 			<Form>
-				<p
-					style={{ color: "blue" }}
-				>{`Click outside this form to close instead.`}</p>
 				<Form.TextArea
 					placeholder="Enter Current Status"
 					name="CurrentStatus"

@@ -38,9 +38,6 @@ class EditBasicInfoForm extends Component {
 
 		return (
 			<Form>
-				<p
-					style={{ color: "blue" }}
-				>{`Click outside this form to close instead.`}</p>
 				<Form.Input label="Nick Name" />
 				<Form.Group widths="equal">
 					<Form.Field label="Birth date" control="select">

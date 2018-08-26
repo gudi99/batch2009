@@ -7,9 +7,6 @@ class EditSocialAccountsForm extends Component {
 	render() {
 		return (
 			<Form>
-				<p
-					style={{ color: "blue" }}
-				>{`Click outside this form to close instead.`}</p>
 				<Form.Group widths="equal">
 					<Form.Input label="Facebook" placeholder="Profile Name" />
 					<Form.Input

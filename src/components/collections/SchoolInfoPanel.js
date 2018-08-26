@@ -1,7 +1,8 @@
 import React from "react";
-import { Table, Icon, Responsive } from "semantic-ui-react";
+import { Table, Icon } from "semantic-ui-react";
 
 import EditSchoolInfo from "../modals/EditSchoolInfo";
+import EditGames from "../modals/EditGames";
 
 class SchoolInfoPanel extends React.Component {
 	state = {};
@@ -12,15 +13,7 @@ class SchoolInfoPanel extends React.Component {
 				{
 					// This should appear if user is viewing his profile in My profile time only.
 					// If he come to this page from status cards, then this should not display
-					<div>
-						<Responsive minWidth={Responsive.onlyTablet.minWidth}>
-							<EditSchoolInfo mode="computer" />
-						</Responsive>
-
-						<Responsive {...Responsive.onlyMobile}>
-							<EditSchoolInfo mode="mobile" />
-						</Responsive>
-					</div>
+					<EditSchoolInfo />
 				}
 				<Table celled striped>
 					<Table.Body>
@@ -64,6 +57,9 @@ class SchoolInfoPanel extends React.Component {
 				</Table>
 
 				{/* Games and Sports */}
+				{/* This should appear if user is viewing his profile in My profile time only.
+					If he come to this page from status cards, then this should not display */}
+				<EditGames />
 				<Table celled>
 					<Table.Header>
 						<Table.Row>
