@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form } from "semantic-ui-react";
 
-class EditGamesForm extends Component {
+class AddNewGamesForm extends Component {
 	state = {};
 
 	render() {
@@ -31,4 +31,4 @@ class EditGamesForm extends Component {
 	}
 }
 
-export default EditGamesForm;
+export default AddNewGamesForm;

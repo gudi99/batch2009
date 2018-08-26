@@ -5,7 +5,15 @@ import {
 	Switch,
 	BrowserRouter as Router
 } from "react-router-dom";
-import { Header, Segment, Image, Grid, Label, Icon } from "semantic-ui-react";
+import {
+	Header,
+	Segment,
+	Image,
+	Grid,
+	Label,
+	Icon,
+	Button
+} from "semantic-ui-react";
 import profileDummyPic from "../images/my pic.jpg";
 import InfoPanels from "../collections/InfoPanels";
 import EditStatus from "../modals/EditStatus";
@@ -132,6 +140,40 @@ class MyProfilePage extends React.Component {
 								</Segment>
 								<Segment color="teal">16</Segment>
 							</Segment.Group>
+						</Grid.Column>
+					</Grid.Row>
+
+					{/* It should be displayed only for the own user. Not to the other */}
+					<Grid.Row centered>
+						<Grid.Column width={3}>
+							<Button
+								animated="fade"
+								size="big"
+								color="teal"
+								basic
+							>
+								<Button.Content visible>
+									Write Article
+								</Button.Content>
+								<Button.Content hidden>
+									<Icon name="pencil" />
+								</Button.Content>
+							</Button>
+						</Grid.Column>
+						<Grid.Column width={3}>
+							<Button
+								animated="fade"
+								size="big"
+								color="teal"
+								basic
+							>
+								<Button.Content visible>
+									Upload to Gallery
+								</Button.Content>
+								<Button.Content hidden>
+									<Icon name="photo" />
+								</Button.Content>
+							</Button>
 						</Grid.Column>
 					</Grid.Row>
 

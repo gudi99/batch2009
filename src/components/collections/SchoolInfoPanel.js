@@ -2,7 +2,7 @@ import React from "react";
 import { Table, Icon } from "semantic-ui-react";
 
 import EditSchoolInfo from "../modals/EditSchoolInfo";
-import EditGames from "../modals/EditGames";
+import AddNewGames from "../modals/AddNewGames";
 
 class SchoolInfoPanel extends React.Component {
 	state = {};
@@ -59,7 +59,7 @@ class SchoolInfoPanel extends React.Component {
 				{/* Games and Sports */}
 				{/* This should appear if user is viewing his profile in My profile time only.
 					If he come to this page from status cards, then this should not display */}
-				<EditGames />
+				<AddNewGames />
 				<Table celled>
 					<Table.Header>
 						<Table.Row>

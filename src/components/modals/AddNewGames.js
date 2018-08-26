@@ -8,9 +8,9 @@ import {
 	Container
 } from "semantic-ui-react";
 
-import EditGamesForm from "../forms/EditGamesForm";
+import AddNewGamesForm from "../forms/AddNewGamesForm";
 
-class EditGames extends Component {
+class AddNewGames extends Component {
 	state = {};
 
 	render() {
@@ -37,12 +37,12 @@ class EditGames extends Component {
 					</Header>
 					<Modal.Content>
 						<Modal.Description>
-							<EditGamesForm />
+							<AddNewGamesForm />
 						</Modal.Description>
 					</Modal.Content>
 					<Modal.Actions>
-						<Button primary icon labelPosition="left">
-							<Icon name="checkmark" /> Update
+						<Button positive icon labelPosition="left">
+							<Icon name="checkmark" /> Add
 						</Button>
 					</Modal.Actions>
 				</Modal>
@@ -51,4 +51,4 @@ class EditGames extends Component {
 	}
 }
 
-export default EditGames;
+export default AddNewGames;
