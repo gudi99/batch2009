@@ -25,12 +25,7 @@ const Page404 = props => {
 		>
 			<Grid.Row columns={2}>
 				<Grid.Column textAlign="center">
-					<Segment
-						raised
-						textAlign="center"
-						color="teal"
-						style={{ marginLeft: "-30px", minWidth: "250px" }}
-					>
+					<Segment raised textAlign="center" color="teal">
 						<Container align="center">
 							<Image src={IconPic} size="small" />
 						</Container>
@@ -46,7 +41,6 @@ const Page404 = props => {
 						content="Go to Home"
 						size="medium"
 						onClick={onClick}
-						style={{ marginLeft: "25px" }}
 					/>
 				</Grid.Column>
 			</Grid.Row>
