@@ -204,13 +204,15 @@ class StatusPage extends React.Component {
 								<Card.Content extra>
 									<div className="ui two buttons">
 										<Button basic color="teal">
-											<Icon name="pencil" />
+											<Icon name="newspaper" />
 											Articles
+											{"	"} 16
 										</Button>
 
 										<Button basic color="teal">
 											<Icon name="images" />
 											Gallery
+											{"	"} 25
 										</Button>
 									</div>
 								</Card.Content>

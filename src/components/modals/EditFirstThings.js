@@ -51,4 +51,4 @@ class EditFirstThings extends Component {
 	}
 }
 
-export default EditFirstThings;
+export default EditFirstThings; 
