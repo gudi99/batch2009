@@ -18,6 +18,11 @@ class FeedPage extends React.Component {
 								<Header>
 									<Image avatar src={BImg} /> Saka Sai Trinath
 								</Header>
+								<Label.Group color="teal" size="mini">
+									<Label as="a">Memory</Label>
+									<Label as="a">Navodaya Days</Label>
+									<Label as="a">12th class</Label>
+								</Label.Group>
 							</Segment>
 							<Segment.Group>
 								<Segment>
@@ -49,6 +54,17 @@ class FeedPage extends React.Component {
 								<Header>
 									<Image avatar src={BImg} /> Saka Sai Trinath
 								</Header>
+								<div>
+									<Label size="mini" as="a" color="teal">
+										Memory
+									</Label>
+									<Label size="mini" as="a" color="teal">
+										Navodaya Days
+									</Label>
+									<Label size="mini" as="a" color="teal">
+										12th class
+									</Label>
+								</div>
 							</Segment>
 							<Segment.Group>
 								<Segment>

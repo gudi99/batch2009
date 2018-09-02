@@ -14,126 +14,148 @@ import gImg from "../images/my pic.jpg";
 const users = [
 	{
 		id: 1,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/matthew.png",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/matthew.png",
 		name: "Matthew",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Matthew",
+		value: "Matthew",
+		text: "Matthew"
 	},
 	{
 		id: 2,
-		imgUrl: gImg,
+		imgurl: gImg,
 		name: "Saka Sai Trinath",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus:
-			"Studying B.Tech at Lovely Professional University, Punjab"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus:
+			"Studying B.Tech at Lovely Professional University, Punjab",
+		key: "Saka Sai Trinath",
+		value: "Saka Sai Trinath",
+		text: "Saka Sai Trinath"
 	},
 	{
 		id: 3,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/elliot.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/elliot.jpg",
 		name: "Elliot Baker",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Elliot Baker",
+		value: "Elliot Baker",
+		text: "Elliot Baker"
 	},
 	{
 		id: 4,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/elliot.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/elliot.jpg",
 		name: "Steve Sanders",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Steve Sanders",
+		value: "Steve Sanders",
+		text: "Steve Sanders"
 	},
 	{
 		id: 5,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/molly.png",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/molly.png",
 		name: "Molly Thomas",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Molly Thomas",
+		value: "Molly Thomas",
+		text: "Molly Thomas"
 	},
 	{
 		id: 6,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/jenny.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/jenny.jpg",
 		name: "Jenny Lawrence",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Jenny Lawrence",
+		value: "Jenny Lawrence",
+		text: "Jenny Lawrence"
 	},
 	{
 		id: 7,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
 		name: "Daniel",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Daniel s",
+		value: "Daniel s",
+		text: "Daniel s"
 	},
 	{
 		id: 8,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
 		name: "Daniel",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Daniel",
+		value: "Daniel",
+		text: "Daniel"
 	},
 	{
 		id: 9,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/molly.png",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/molly.png",
 		name: "Molly Thomas",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam",
+		key: "Molly Thomas1",
+		value: "Molly Thomas1",
+		text: "Molly Thomas1"
 	},
 	{
 		id: 10,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/jenny.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/jenny.jpg",
 		name: "Jenny Lawrence",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam"
 	},
 	{
 		id: 11,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
 		name: "Daniel",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam"
 	},
 	{
 		id: 12,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
 		name: "Daniel",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam"
 	},
 	{
 		id: 13,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/molly.png",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/molly.png",
 		name: "Molly Thomas",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam"
 	},
 	{
 		id: 14,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/jenny.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/jenny.jpg",
 		name: "Jenny Lawrence",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam"
 	},
 	{
 		id: 15,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
 		name: "Daniel",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam"
 	},
 	{
 		id: 16,
-		imgUrl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
+		imgurl: "https://react.semantic-ui.com/images/avatar/large/daniel.jpg",
 		name: "Daniel",
-		studyPeriod: "2009 (6th) - 2016 (12th)",
-		currentStatus: "Studying B.Sc at Gitam University, Visakhapatnam"
+		studyperiod: "2009 (6th) - 2016 (12th)",
+		currentstatus: "Studying B.Sc at Gitam University, Visakhapatnam"
 	}
 ];
 
 class StatusPage extends React.Component {
-	componentWillMount() {
-		this.resetComponent();
-	}
-
-	resetComponent = () =>
-		this.setState({ isLoading: false, results: [], value: "" });
+	state = {};
 
 	render() {
 		return (
@@ -151,6 +173,15 @@ class StatusPage extends React.Component {
 					<Header as="h1" content="Status Page" color="teal" />
 				</Grid.Row>
 				<Grid.Row>
+					<Grid.Column width={4}>
+						<Dropdown
+							placeholder="Search user"
+							fluid
+							search
+							selection
+							options={users}
+						/>
+					</Grid.Column>
 					<Grid.Column width={2}>
 						<Dropdown
 							text="Filter"
@@ -187,18 +218,18 @@ class StatusPage extends React.Component {
 							>
 								<Card.Content>
 									<Image
-										src={user.imgUrl}
+										src={user.imgurl}
 										floated="right"
 										size="mini"
 									/>
 									<Card.Header>{user.name}</Card.Header>
 									<Card.Meta>
 										<span className="date">
-											{user.studyPeriod}
+											{user.studyperiod}
 										</span>
 									</Card.Meta>
 									<Card.Description>
-										{user.currentStatus}
+										{user.currentstatus}
 									</Card.Description>
 								</Card.Content>
 								<Card.Content extra>

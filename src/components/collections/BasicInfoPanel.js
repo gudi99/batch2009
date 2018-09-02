@@ -69,6 +69,13 @@ class BasicInfoPanel extends React.Component {
 						</Table.Row>
 						<Table.Row>
 							<Table.Cell>
+								<Icon name="tint" color="teal" />
+								Blood Group
+							</Table.Cell>
+							<Table.Cell>O+</Table.Cell>
+						</Table.Row>
+						<Table.Row>
+							<Table.Cell>
 								<Icon name="language" color="teal" />I Know
 							</Table.Cell>
 							<Table.Cell>Telugu, Hindi, English</Table.Cell>

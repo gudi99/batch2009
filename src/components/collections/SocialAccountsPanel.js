@@ -11,7 +11,7 @@ class SocialAccountsPanel extends React.Component {
 			<div>
 				<Responsive minWidth={Responsive.onlyTablet.minWidth}>
 					<EditSocialAccounts />
-					<Table striped>
+					<Table striped celled>
 						<Table.Body>
 							<Table.Row>
 								<Table.Cell>
@@ -21,8 +21,15 @@ class SocialAccountsPanel extends React.Component {
 										content="Facebook"
 									/>
 								</Table.Cell>
-								<Table.Cell>
-									https://www.facebook.com/saitrinath.saka
+								<Table.Cell>saitrinath.saka</Table.Cell>
+								<Table.Cell selectable>
+									<a
+										href="https://www.facebook.com/saitrinath.saka"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										https://www.facebook.com/saitrinath.saka
+									</a>
 								</Table.Cell>
 							</Table.Row>
 							<Table.Row>
@@ -34,6 +41,7 @@ class SocialAccountsPanel extends React.Component {
 									/>
 								</Table.Cell>
 								<Table.Cell>9866153176</Table.Cell>
+								<Table.Cell>9866153176</Table.Cell>
 							</Table.Row>
 							<Table.Row>
 								<Table.Cell>
@@ -43,8 +51,15 @@ class SocialAccountsPanel extends React.Component {
 										content="Twitter"
 									/>
 								</Table.Cell>
-								<Table.Cell>
-									https://twitter.com/sst_trinath
+								<Table.Cell>sst_trinath</Table.Cell>
+								<Table.Cell selectable>
+									<a
+										href="https://twitter.com/sst_trinath"
+										target="_blank"
+										rel="noreferrer noopener"
+									>
+										https://twitter.com/sst_trinath
+									</a>
 								</Table.Cell>
 							</Table.Row>
 							<Table.Row>
@@ -56,7 +71,9 @@ class SocialAccountsPanel extends React.Component {
 									/>
 								</Table.Cell>
 								<Table.Cell>sst.trinath@gmail.com</Table.Cell>
+								<Table.Cell>sst.trinath@gmail.com</Table.Cell>
 							</Table.Row>
+
 							<Table.Row>
 								<Table.Cell>
 									<Button
@@ -65,10 +82,18 @@ class SocialAccountsPanel extends React.Component {
 										content="Google Plus"
 									/>
 								</Table.Cell>
-								<Table.Cell>
-									https://plus.google.com/101044252818501620910
+								<Table.Cell>Sai Trinath Saka</Table.Cell>
+								<Table.Cell selectable>
+									<a
+										href="https://plus.google.com/101044252818501620910"
+										target="_blank"
+										rel="noreferrer noopener"
+									>
+										https://plus.google.com/101044252818501620910
+									</a>
 								</Table.Cell>
 							</Table.Row>
+
 							<Table.Row>
 								<Table.Cell>
 									<Button
@@ -77,6 +102,7 @@ class SocialAccountsPanel extends React.Component {
 										content="Instagram"
 									/>
 								</Table.Cell>
+								<Table.Cell>saitrinathsaka</Table.Cell>
 								<Table.Cell>saitrinathsaka</Table.Cell>
 							</Table.Row>
 							<Table.Row>
@@ -87,8 +113,15 @@ class SocialAccountsPanel extends React.Component {
 										content="Linkedin"
 									/>
 								</Table.Cell>
-								<Table.Cell>
-									https://www.linkedin.com/in/saitrinathsaka/
+								<Table.Cell>saitrinathsaka</Table.Cell>
+								<Table.Cell selectable>
+									<a
+										href="https://www.linkedin.com/in/saitrinathsaka/"
+										target="_blank"
+										rel="noreferrer noopener"
+									>
+										https://www.linkedin.com/in/saitrinathsaka/
+									</a>
 								</Table.Cell>
 							</Table.Row>
 							<Table.Row>
@@ -100,6 +133,7 @@ class SocialAccountsPanel extends React.Component {
 									/>
 								</Table.Cell>
 								<Table.Cell>No account</Table.Cell>
+								<Table.Cell>No account</Table.Cell>
 							</Table.Row>
 							<Table.Row>
 								<Table.Cell>
@@ -109,8 +143,15 @@ class SocialAccountsPanel extends React.Component {
 										content="Pinterest"
 									/>
 								</Table.Cell>
-								<Table.Cell>
-									https://in.pinterest.com/saitrinaths/
+								<Table.Cell>saitrinathsaka</Table.Cell>
+								<Table.Cell selectable>
+									<a
+										href="https://in.pinterest.com/saitrinaths/"
+										target="_blank"
+										rel="noreferrer noopener"
+									>
+										https://in.pinterest.com/saitrinaths/
+									</a>
 								</Table.Cell>
 							</Table.Row>
 							<Table.Row>
@@ -121,8 +162,15 @@ class SocialAccountsPanel extends React.Component {
 										content="Github"
 									/>
 								</Table.Cell>
-								<Table.Cell>
-									https://github.com/SakaSaiTrinath
+								<Table.Cell>SakaSaiTrinath</Table.Cell>
+								<Table.Cell selectable>
+									<a
+										href="https://github.com/SakaSaiTrinath"
+										target="_blank"
+										rel="noreferrer noopener"
+									>
+										https://github.com/SakaSaiTrinath
+									</a>
 								</Table.Cell>
 							</Table.Row>
 						</Table.Body>

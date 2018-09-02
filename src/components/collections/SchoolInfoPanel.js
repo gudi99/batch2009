@@ -1,11 +1,82 @@
 import React from "react";
-import { Table, Icon } from "semantic-ui-react";
+import { Table, Button, Icon } from "semantic-ui-react";
 
 import EditSchoolInfo from "../modals/EditSchoolInfo";
 import AddNewGames from "../modals/AddNewGames";
 
+const gameData = [
+	{
+		id: 1,
+		Game: "Volleyball",
+		LevelReached: "Clusters",
+		NumberOfTimes: 3
+	},
+	{
+		id: 2,
+		Game: "Kabaddi",
+		LevelReached: "Regionals",
+		NumberOfTimes: 2
+	},
+	{
+		id: 3,
+		Game: "Kho Kho",
+		LevelReached: "Nationals",
+		NumberOfTimes: 1
+	},
+	{
+		id: 4,
+		Game: "Shuttle",
+		LevelReached: "Nationals",
+		NumberOfTimes: 1
+	},
+	{
+		id: 5,
+		Game: "Chess",
+		LevelReached: "Nationals",
+		NumberOfTimes: 1
+	},
+	{
+		id: 6,
+		Game: "Football",
+		LevelReached: "Nationals",
+		NumberOfTimes: 1
+	},
+	{
+		id: 7,
+		Game: "Table Tennis",
+		LevelReached: "Nationals",
+		NumberOfTimes: 1
+	}
+];
+
 class SchoolInfoPanel extends React.Component {
-	state = {};
+	state = { gameData };
+
+	deleteItem = id => {
+		gameData.splice(id, 1);
+		this.setState({ gameData });
+	};
+
+	GameIconFinder = game => {
+		switch (game) {
+			case "Volleyball":
+				return "volleyball ball";
+			case "Kabaddi":
+				return "kickstarter k";
+			case "Kho Kho":
+				return "gg";
+			case "Shuttle":
+				return "strikethrough";
+			case "Chess":
+				return "chess knight";
+			case "Football":
+				return "futbol";
+			case "Table Tennis":
+				return "table tennis";
+			default:
+				return null;
+		}
+	};
 
 	render() {
 		return (
@@ -56,80 +127,53 @@ class SchoolInfoPanel extends React.Component {
 					</Table.Body>
 				</Table>
 
-				{/* Games and Sports */}
-				{/* This should appear if user is viewing his profile in My profile time only.
-					If he come to this page from status cards, then this should not display */}
-				<AddNewGames />
+				{
+					/* Games and Sports */
+					/* This should appear if user is viewing his profile in My profile time only.
+					If he come to this page from status cards, then this should not display */
+					<AddNewGames />
+				}
 				<Table celled>
 					<Table.Header>
 						<Table.Row>
-							<Table.HeaderCell colSpan="3">
+							<Table.HeaderCell colSpan="4">
 								Games and Sports
 							</Table.HeaderCell>
 						</Table.Row>
 						<Table.Row>
 							<Table.HeaderCell>Game</Table.HeaderCell>
 							<Table.HeaderCell>Level reached</Table.HeaderCell>
-							<Table.HeaderCell>Number of times</Table.HeaderCell>
+							<Table.HeaderCell colSpan="2">
+								Number of times
+							</Table.HeaderCell>
 						</Table.Row>
 					</Table.Header>
 					<Table.Body>
-						<Table.Row>
-							<Table.Cell>
-								<Icon name="volleyball ball" color="teal" />
-								Volleyball
-							</Table.Cell>
-							<Table.Cell>Clusters</Table.Cell>
-							<Table.Cell>3</Table.Cell>
-						</Table.Row>
-						<Table.Row>
-							<Table.Cell>
-								<Icon name="kickstarter k" color="teal" />
-								Kabaddi
-							</Table.Cell>
-							<Table.Cell>Regionals</Table.Cell>
-							<Table.Cell>2</Table.Cell>
-						</Table.Row>
-						<Table.Row>
-							<Table.Cell>
-								<Icon name="gg" color="teal" />
-								Kho Kho
-							</Table.Cell>
-							<Table.Cell>Nationals</Table.Cell>
-							<Table.Cell>1</Table.Cell>
-						</Table.Row>
-						<Table.Row>
-							<Table.Cell>
-								<Icon name="strikethrough" color="teal" />
-								Shuttle
-							</Table.Cell>
-							<Table.Cell>Nationals</Table.Cell>
-							<Table.Cell>1</Table.Cell>
-						</Table.Row>
-						<Table.Row>
-							<Table.Cell>
-								<Icon name="chess knight" color="teal" />
-								Chess
-							</Table.Cell>
-							<Table.Cell>Nationals</Table.Cell>
-							<Table.Cell>1</Table.Cell>
-						</Table.Row>
-						<Table.Row>
-							<Table.Cell>
-								<Icon name="futbol" color="teal" />
-								Football
-							</Table.Cell>
-							<Table.Cell>Nationals</Table.Cell>
-							<Table.Cell>1</Table.Cell>
-						</Table.Row>
-						<Table.Row>
-							<Table.Cell>
-								<Icon name="table tennis" color="teal" />
-								Table Tennis
-							</Table.Cell>
-							<Table.Cell>Nationals</Table.Cell>
-							<Table.Cell>1</Table.Cell>
-						</Table.Row>
+						{this.state.gameData.map((game, i) => {
+							const name = game.Game;
+							return (
+								<Table.Row key={game.id}>
+									<Table.Cell>
+										<Icon
+											name={this.GameIconFinder(name)}
+											color="teal"
+										/>
+										{game.Game}
+									</Table.Cell>
+									<Table.Cell>{game.LevelReached}</Table.Cell>
+									<Table.Cell>
+										{game.NumberOfTimes}
+									</Table.Cell>
+									<Table.Cell collapsing textAlign="right">
+										<Button
+											size="mini"
+											icon="close"
+											onClick={() => this.deleteItem(i)}
+										/>
+									</Table.Cell>
+								</Table.Row>
+							);
+						})}
 					</Table.Body>
 				</Table>
 			</div>
