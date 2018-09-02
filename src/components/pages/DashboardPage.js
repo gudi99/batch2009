@@ -106,7 +106,7 @@ class DashboardPage extends React.Component {
 
 		return (
 			<div>
-				<Sidebar.Pushable as={Segment}>
+				<Sidebar.Pushable as={Segment} style={{ minHeight: "100vh" }}>
 					<SideBar
 						visible={visible}
 						activeItem={activeItem}

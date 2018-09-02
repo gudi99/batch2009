@@ -1,21 +1,58 @@
 Need to add:
-	feedback button in sidebar,
-	dashboard in sidebar,
-	Main Gallery
 
-	In settings:
+	1. In settings:
 		change password,
-		security settings (still need to think),
-		edit pages for all.
+		security settings (still need to think)
 
-	Introductory pages which asks the user data. (these are only visible when user's first time visit).
 
-More Tabs to do:
+	2. Introductory pages which asks the user data. (these are only visible when user's first time visit).
 
-added 1) Status After School
-added 2) My Posts
-	 need to add 2.1) Create Posts
-added 3) MyGallery
+	3. Need to develop Dashboard
 
+	4.In announcements page, 
+		On Clicking Read more should extend the announcement or display in a modal or display in next tab.
+
+	5. Status page,
+		a) Make the search work along with filtering. That is setting up the filter and searching somebody should display that card only.
+
+		b) Clicking on any card should display their selected one's profile page with thier info.
+
+		c) add options or tabs which shows "members joined the website", "members yet to join".
+
+	6. In feed page, 
+
+			By default, the feed page shows the most recent article which is published then the next and on.
+
+		a) add rating system
+
+		b) add Read more thing and make it work.
+
+		c) add search (any keyowrds which match with the title of articles) and filter (by author, by tag, by date) to search for the articles.
+
+	7. In My profile page.
+
+		Add privacy things for every tab and for every item.
+
+		a) Make upload profile pic, and upload to gallery work.
+
+		b) In AfterNavodaya tab, make deletions work and add update button at the bottom.
+
+		c) add "Suggestion topics link" and finalize any 10 basic things to keep and left adding others to users.
+
+		d) add "Suggestion questions link" and finalize any 10 basic things to keep and left adding others to users.
+
+		e) In Gallery, Make availability Creating folders, adding images to it.
+			1) deleting images.
+			2) deleting folders.
+			3) Edit name of folders.
+
+	8. In Site Gallery, add folders to store category of images.
+
+		a) Make availability Creating folders, adding images to it.
+
+		b) Don't include deletion of pics or folders. (At start).
+
+	Extra thing:
+		Add rules, terms and conditions somewhere
 
 

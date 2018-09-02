@@ -23,109 +23,111 @@ class SideBar extends React.Component {
 				visible={visible}
 				vertical
 				width="wide"
-				animation="overlay"
 				onHide={this.props.handleSideBarHide}
+				animation="overlay"
 				mobile="true"
 				size="huge"
 			>
-				{/* Brand position */}
-				<Menu.Item>
-					<Segment
-						raised
-						role="presentation"
-						onClick={this.props.handleSideBarHide}
-					>
-						<Header as="h2">
-							<Image
-								src={logoImage}
-								style={{
-									height: "80px",
-									width: "80px"
-								}}
-							/>
-							Batch 2009
-						</Header>
-					</Segment>
-				</Menu.Item>
-				<Menu.Item />
-
-				<Segment raised size="big">
-					<Menu.Item
-						as={NavLink}
-						to="/announcements"
-						name="announcements"
-						active={activeItem === "announcements"}
-						onClick={this.props.handleItemClick}
-					>
-						<Label
-							color="red"
-							horizontal
-							size="small"
-							position="right"
+				<div onClick={this.props.handleSideBarHide} role="presentation">
+					{/* Brand position */}
+					<Menu.Item>
+						<Segment
+							raised
+							role="presentation"
+							onClick={this.props.handleSideBarHide}
 						>
-							2
-						</Label>
-						<Icon name="bullhorn" />
-						Announcements
+							<Header as="h2">
+								<Image
+									src={logoImage}
+									style={{
+										height: "80px",
+										width: "80px"
+									}}
+								/>
+								Batch 2009
+							</Header>
+						</Segment>
 					</Menu.Item>
+					<Menu.Item />
 
+					<Segment raised size="big">
+						<Menu.Item
+							as={NavLink}
+							to="/announcements"
+							name="announcements"
+							active={activeItem === "announcements"}
+							onClick={this.props.handleItemClick}
+						>
+							<Label
+								color="red"
+								horizontal
+								size="small"
+								position="right"
+							>
+								2
+							</Label>
+							<Icon name="bullhorn" />
+							Announcements
+						</Menu.Item>
+
+						<Menu.Item
+							name="status"
+							as={NavLink}
+							to="/status"
+							active={activeItem === "status"}
+							onClick={this.props.handleItemClick}
+						>
+							<Icon name="address card" />
+							Status
+						</Menu.Item>
+
+						<Menu.Item
+							name="feed"
+							as={NavLink}
+							to="/feed"
+							active={activeItem === "feed"}
+							onClick={this.props.handleItemClick}
+						>
+							<Label color="red" horizontal size="small">
+								10
+							</Label>
+							<Icon name="feed" />
+							Feed
+						</Menu.Item>
+					</Segment>
+
+					<Menu.Item />
 					<Menu.Item
-						name="status"
+						name="myprofile"
 						as={NavLink}
-						to="/status"
-						active={activeItem === "status"}
+						to="/myprofile"
+						active={activeItem === "myprofile"}
 						onClick={this.props.handleItemClick}
 					>
-						<Icon name="address card" />
-						Status
+						<Icon name="user circle outline" />
+						MyProfile
 					</Menu.Item>
-
 					<Menu.Item
-						name="feed"
+						name="sitegallery"
 						as={NavLink}
-						to="/feed"
-						active={activeItem === "feed"}
+						to="/sitegallery"
+						active={activeItem === "sitegallery"}
 						onClick={this.props.handleItemClick}
 					>
-						<Label color="red" horizontal size="small">
-							10
-						</Label>
-						<Icon name="feed" />
-						Feed
+						<Icon name="images" />
+						Site Gallery
 					</Menu.Item>
-				</Segment>
-
-				<Menu.Item />
-				<Menu.Item
-					name="myprofile"
-					as={NavLink}
-					to="/myprofile"
-					active={activeItem === "myprofile"}
-					onClick={this.props.handleItemClick}
-				>
-					<Icon name="user circle outline" />
-					MyProfile
-				</Menu.Item>
-				<Menu.Item
-					name="sitegallery"
-					as={NavLink}
-					to="/sitegallery"
-					active={activeItem === "sitegallery"}
-					onClick={this.props.handleItemClick}
-				>
-					<Icon name="images" />
-					Site Gallery
-				</Menu.Item>
-				<Menu.Item
-					name="contact"
-					as={NavLink}
-					to="/contact"
-					active={activeItem === "contact"}
-					onClick={this.props.handleItemClick}
-				>
-					<Icon name="alarm" />
-					Contact Developer
-				</Menu.Item>
+					<Menu.Item
+						name="contact"
+						as={NavLink}
+						to="/contact"
+						active={activeItem === "contact"}
+						onClick={this.props.handleItemClick}
+					>
+						<Icon name="alarm" />
+						Contact Developer
+					</Menu.Item>
+				</div>
 			</Sidebar>
 		);
 	}
