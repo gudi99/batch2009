@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import WelcomePage from "./components/pages/WelcomePage";
 import DashboardPage from "./components/pages/DashboardPage";
 import Page404 from "./components/pages/Page404";
+import ArticlePage from "./components/pages/ArticlePage";
 
 const subroutes = [
 	{
@@ -45,6 +46,12 @@ const subroutes = [
 		exact: true,
 		strict: true,
 		path: "/contact"
+	},
+	{
+		id: "article",
+		exact: true,
+		strict: true,
+		path: "/article"
 	}
 ];
 
@@ -52,6 +59,7 @@ const App = () => (
 	<div>
 		<Switch>
 			<Route path="/" exact component={WelcomePage} />
+			<Route path="/article" exact component={ArticlePage} />
 			{subroutes.map(route => (
 				<Route
 					key={route.id}

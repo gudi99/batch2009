@@ -41,7 +41,7 @@ class AnnouncementsPage extends React.Component {
 
 	SetRating = (id, newRating, newNoOfRatings) => {
 		Object.assign(anns.find(ann => ann.id === id), {
-			rating: parseInt(newRating, 10),
+			rating: parseFloat(newRating, 10),
 			NoOfRatings: parseInt(newNoOfRatings, 10)
 		});
 
